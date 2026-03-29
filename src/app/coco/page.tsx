@@ -27,7 +27,7 @@ export default function CocoGallery() {
         {photos.map((photo, i) => (
           <div key={i} className="relative aspect-square bg-slate-50 rounded-2xl border-4 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 group hover:border-[#FF6C0C]/50 hover:bg-[#FF6C0C]/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer overflow-hidden">
             {/* The image component gracefully shows a fallback UI if the file isn't uploaded yet */}
-            <img src={photo.src} alt={photo.title} className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 z-0" onLoad={(e) => e.currentTarget.classList.remove('opacity-0')} />
+            <img src={photo.src} alt={photo.title} className="absolute inset-0 w-full h-full object-cover z-0" />
             
             <div className="relative z-10 flex flex-col items-center p-4 bg-white/80 rounded-xl backdrop-blur-sm opacity-100 group-hover:opacity-0 transition-opacity duration-500 text-center">
               <span className="text-4xl mb-3">📸</span>
