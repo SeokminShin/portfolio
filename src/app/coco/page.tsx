@@ -1,14 +1,13 @@
 import Link from 'next/link';
 
 export default function CocoGallery() {
-  // Add placeholder image paths here later. You can just drop cute images in the public/ folder and reference them here!
   const photos = [
-    { src: "/coco/placeholder1.jpg", title: "Sleeping on duty" },
-    { src: "/coco/placeholder2.jpg", title: "Reviewing thermodynamic derivations" },
-    { src: "/coco/placeholder3.jpg", title: "Playtime during cyclic voltammetry" },
-    { src: "/coco/placeholder4.jpg", title: "Barking at non-ideal behavior" },
-    { src: "/coco/placeholder5.jpg", title: "Morning walk" },
-    { src: "/coco/placeholder6.jpg", title: "Evaluating battery cyclic data" },
+    { src: "/coco/1.jpg", title: "Sleeping on duty" },
+    { src: "/coco/2.jpg", title: "Reviewing thermodynamic derivations" },
+    { src: "/coco/3.jpg", title: "Playtime during cyclic voltammetry" },
+    { src: "/coco/4.jpg", title: "Barking at non-ideal behavior" },
+    { src: "/coco/5.jpg", title: "Morning walk" },
+    { src: "/coco/6.jpg", title: "Evaluating battery cyclic data" },
   ];
 
   return (
@@ -19,17 +18,26 @@ export default function CocoGallery() {
         </div>
         <h1 className="text-5xl font-extrabold tracking-tight text-slate-900">Coco's Gallery 🐾</h1>
         <p className="max-w-2xl text-lg text-slate-600 mt-2">
-          The official archive of Coco's cutest moments. Principal Paw-vestigator (PI), stress reliever, and the true mastermind behind all great electrochemical properties.
+          The official archive of Coco's cutest moments. Principal Paw-vestigator, stress reliever, and the true mastermind behind all great electrochemical properties.
         </p>
       </header>
 
       {/* Gallery Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
         {photos.map((photo, i) => (
-          <div key={i} className="aspect-square bg-slate-50 rounded-2xl border-4 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 group hover:border-[#FF6C0C]/50 hover:bg-[#FF6C0C]/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg cursor-pointer">
-            <span className="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">📸</span>
-            <span className="text-sm font-bold text-slate-600 px-4 text-center">{photo.title}</span>
-            <span className="text-xs font-medium text-slate-400 mt-1 italic">Image dropping soon</span>
+          <div key={i} className="relative aspect-square bg-slate-50 rounded-2xl border-4 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 group hover:border-[#FF6C0C]/50 hover:bg-[#FF6C0C]/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer overflow-hidden">
+            {/* The image component gracefully shows a fallback UI if the file isn't uploaded yet */}
+            <img src={photo.src} alt={photo.title} className="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700 z-0" onLoad={(e) => e.currentTarget.classList.remove('opacity-0')} />
+            
+            <div className="relative z-10 flex flex-col items-center p-4 bg-white/80 rounded-xl backdrop-blur-sm opacity-100 group-hover:opacity-0 transition-opacity duration-500 text-center">
+              <span className="text-4xl mb-3">📸</span>
+              <span className="text-sm font-bold text-slate-600 px-2">{photo.title}</span>
+              <span className="text-xs font-mono text-slate-400 mt-2">public{photo.src}</span>
+            </div>
+            
+            <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+               <p className="text-white font-bold text-sm text-center">{photo.title}</p>
+            </div>
           </div>
         ))}
       </div>
