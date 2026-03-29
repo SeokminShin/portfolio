@@ -7,9 +7,14 @@ export default function Research() {
       {/* HEADER */}
       <header className="flex flex-col gap-4">
         <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Research Itinerary</h1>
-        <p className="max-w-3xl text-lg text-slate-600">
-          My academic journey is a continuous evolution from macroscopic catalyst engineering to unearthing the most fundamental physicochemical rules governing thermodynamic energy systems.
-        </p>
+        <div className="max-w-4xl flex flex-col gap-5">
+          <p className="text-lg text-slate-600 leading-relaxed pr-4">
+            My academic journey is a continuous evolution from macroscopic catalyst engineering toward unearthing the most fundamental physicochemical rules governing thermodynamic energy systems.
+          </p>
+          <p className="text-base text-slate-500 leading-relaxed border-l-4 border-slate-200 pl-4">
+            <em>This profound shift in my research philosophy was deeply inspired by <a href="https://sdkang.org" target="_blank" rel="noopener noreferrer" className="font-bold text-[#A31F34] hover:underline transition-colors not-italic">Prof. Dongmin Kang</a>. I am immensely grateful for his rigorous framework, and I continuously strive to fill my academic gaps under his guidance.</em>
+          </p>
+        </div>
       </header>
       
       {/* PRESENT & FUTURE */}
