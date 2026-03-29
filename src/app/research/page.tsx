@@ -2,52 +2,51 @@ export default function Research() {
   return (
     <div className="flex flex-col gap-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header className="flex flex-col gap-4">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Research Interests</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Research Focus</h1>
         <p className="max-w-3xl text-lg text-slate-600">
-          Seeking rigorous theoretical and mechanistic frameworks grounded in experimental electrochemistry, with transformational exposure to frontier research in energy conversion systems.
+          My academic foundation lies at the intersection of materials synthesis, electrocatalysis, and rigorous physical characterization. I am deeply driven to bridge explicit macro-scale experimental observations with fundamental, theoretical solid-state physicochemical frameworks.
         </p>
       </header>
       
       <div className="flex flex-col gap-12">
         <section className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold text-[#A31F34]">Electrochemistry based on Theoretical & Thermochemical Frameworks</h2>
+          <h2 className="text-2xl font-bold text-[#A31F34]">1. Thermodynamics & Fundamental Charge Transport</h2>
           <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#FF6C0C] transition-all">
             <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-[#A31F34] italic">
-              "Understanding proton/electron transfer under electro-/thermochemical regime by the language of quantum mechanics."
+              "Deciphering non-ideal charge and ionic transport beyond conventional limits."
             </p>
             <ul className="list-disc pl-5 space-y-2 text-slate-600">
-              <li>Investigating mechanistic frameworks that bridge electrochemical kinetics (e.g., Butler-Volmer, Marcus theory) with thermochemical free energy landscapes.</li>
-              <li>Exploring quantum mechanical models of electron/proton transfer in electrocatalysis focusing on tunneling and nonadiabatic transitions.</li>
-              <li>Applying chemical potential-based frameworks to interpret PCET and bond activations.</li>
+              <li>Pioneering mechanistic frameworks that seamlessly bridge macroscopic electrochemical kinetics (e.g., Butler-Volmer equations) with microscopic thermochemical phenomenons.</li>
+              <li>Exploring non-ideal solid solutions, questioning conventional diffusion metrics (such as GITT limitations), and resolving the thermodynamic origins of charge transport.</li>
+              <li>Understanding Proton-Coupled Electron Transfer (PCET) energy landscapes and quantum mechanical models in complex electrocatalytic environments.</li>
             </ul>
           </div>
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold text-[#A31F34]">Mechanistic Electrocatalysis & Analytical System Design</h2>
+          <h2 className="text-2xl font-bold text-[#A31F34]">2. Revealing Hidden Kinetics via Advanced Electro-analysis</h2>
           <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#FF6C0C] transition-all">
              <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-[#FF6C0C] italic">
-              "Deconvolution of kinetic factors for mechanism study using electrochemical analysis."
+              "Overcoming macroscopic constraints through microscopic phase analysis."
             </p>
             <ul className="list-disc pl-5 space-y-2 text-slate-600">
-              <li>Fundamental understanding of electrochemical interphases (phase boundaries of system).</li>
-              <li>Exploring to circumvent energetic LSRs through interfacial intermediate modulation and altered PCET.</li>
-              <li>Designing cell systems for the analytical deconvolution of kinetic factors during electrocatalysis.</li>
-              <li>Deconvolution of mechanistic factors from observed kinetics through advanced electro-analysis.</li>
+              <li>Analyzing fundamental electrochemical interphases by deconvoluting macroscopic kinetic observations into precise, mechanistic step-by-step factors.</li>
+              <li>Tackling critical bottlenecks in battery heterogeneity, including the experimental deconvolution of exact contact resistance and localized phase separation phenomena within battery composites.</li>
+              <li>Designing advanced cell architectures dedicated to identifying intermediate modulations that circumvent strict energetic Linear Scaling Relationships (LSRs).</li>
             </ul>
           </div>
         </section>
 
         <section className="flex flex-col gap-4">
-          <h2 className="text-2xl font-bold text-[#A31F34]">Operando and in-situ Analysis</h2>
+          <h2 className="text-2xl font-bold text-[#A31F34]">3. Bridging Theory with Operando & In-situ Observations</h2>
           <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#FF6C0C] transition-all">
             <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-slate-400 italic">
-              "Mechanism study utilizing various operando and in-situ analysis."
+              "Providing definitive experimental validation for thermodynamic solid-state theories."
             </p>
             <ul className="list-disc pl-5 space-y-2 text-slate-600">
-              <li>Study of PCET dynamics and bond formation using X-ray based techniques (XAFS, STXM).</li>
-              <li>Study of electron transfer to surface adsorbed species using spectroscopy analysis (Raman, electrochemical scanning transmission).</li>
-              <li>Development of in-situ/operando analytical systems for dynamic analysis.</li>
+              <li>Leveraging versatile synthetic proficiencies with robust characterization platforms (e.g., Synchrotron X-ray Absorption Spectroscopy, Scanning Transmission X-ray Microscopy, HR-TEM, and Raman).</li>
+              <li>Developing proprietary in-situ / operando analytical cells to capture real-time PCET dynamics, bond formations, and intermediate speciation.</li>
+              <li>Demonstrating the capability to rigorously evaluate and realize theoretical kinetic models inside practical, dynamic electrochemical systems.</li>
             </ul>
           </div>
         </section>
