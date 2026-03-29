@@ -49,10 +49,10 @@ export default function Home() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              tag: "Research Topic",
-              title: "Multi-reactant Electrocatalysis",
-              date: "2023 - 2024",
-              description: "Investigating mechanisms under competing reactants and developing catalysts for complex multi-reactant electrochemical systems.",
+              tag: "Ph.D. Research Theme",
+              title: "Fitting Specific Reaction Intermediates",
+              date: "UNIST (~2024)",
+              description: "Overcame linear scaling relationships (LSRs) via atomic-scale spacing and self-tandem active sites to drive complex multi-reactant electrocatalysis.",
             },
             {
               tag: "Presentation",
