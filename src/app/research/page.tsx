@@ -23,42 +23,36 @@ export default function Research() {
           <section className="flex flex-col gap-3">
             <h3 className="text-xl font-bold text-[#A31F34]">Fundamental Electrochemical Thermodynamics</h3>
             <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#A31F34] transition-all">
-              <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-[#A31F34] italic">
+              <p className="text-slate-700 font-semibold mb-3 bg-slate-50 p-3 rounded border-l-4 border-[#A31F34] italic">
                 "Rethinking the origins of electromotive force and charge transport beyond conventional electrostatic interpretations."
               </p>
-              <ul className="list-disc pl-5 space-y-2 text-slate-600">
-                <li>Re-evaluating conventional electrochemical assumptions by strictly adhering to thermodynamic measurables, focusing on electrochemical potentials rather than physically ambiguous electrical potentials.</li>
-                <li>Investigating the true driving forces of ion and electron motion in complex solutions and mixed conductors, rigorously separating chemical polarization from overvoltage.</li>
-                <li>Redefining the thermodynamic basis of Nernstian behavior, local-equilibration phenomena, and chemical capacitance to prevent half-reaction evaluation pitfalls in real energy systems.</li>
-              </ul>
+              <p className="text-slate-600 leading-relaxed">
+                Moving beyond the physical ambiguity of electrical potentials, my future research aims to redefine the thermodynamic origins of charge transport. By exclusively adhering to measurable electrochemical potentials, I seek to rigorously decouple true chemical polarization from unmeasurable overvoltage in realistic non-ideal energy systems.
+              </p>
             </div>
           </section>
 
           <section className="flex flex-col gap-3">
-            <h3 className="text-xl font-bold text-[#A31F34]">Physical Electrochemistry & Transport Phenomena</h3>
+            <h3 className="text-xl font-bold text-[#FF6C0C]">Physical Electrochemistry & Transport Phenomena</h3>
             <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#FF6C0C] transition-all">
-               <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-[#FF6C0C] italic">
-                "Deconvoluting ambipolar diffusion and space-charge phenomena in dynamic energy materials."
+               <p className="text-slate-700 font-semibold mb-3 bg-slate-50 p-3 rounded border-l-4 border-[#FF6C0C] italic">
+                "Unearthing the thermodynamic origins of ambipolar diffusion and defect mobility."
               </p>
-              <ul className="list-disc pl-5 space-y-2 text-slate-600">
-                <li>Bridging macroscopic transport phenomena, such as chemical diffusion, with theoretical models of local charge non-neutrality and defect thermodynamics.</li>
-                <li>Resolving the exact origins of junction potential differences and examining how transference numbers govern ambipolar diffusion in non-ideal solutions.</li>
-                <li>Exposing the intrinsic limitations of conventional techniques (e.g., standard GITT analysis) in highly non-ideal storage materials, utilizing advanced theories of chemical capacitance.</li>
-              </ul>
+              <p className="text-slate-600 leading-relaxed">
+                Future energy materials rely on the complex coupling of ions and electrons. I aim to bridge macroscopic transport phenomena—such as chemical diffusion and junction potentials—with fundamental theories of local space-charge dynamics and chemical capacitance in highly non-ideal mixed conductors.
+              </p>
             </div>
           </section>
 
           <section className="flex flex-col gap-3">
-            <h3 className="text-xl font-bold text-[#A31F34]">Interfacial Thermodynamics & Kinetics</h3>
+            <h3 className="text-xl font-bold text-slate-800">Interfacial Thermodynamics & Kinetics</h3>
             <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-slate-800 transition-all">
-              <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-slate-800 italic">
-                "Validating theoretical frameworks through rigorous experimental deconvolutions."
+              <p className="text-slate-700 font-semibold mb-3 bg-slate-50 p-3 rounded border-l-4 border-slate-800 italic">
+                "Validating explicit physicochemical models through precise experimental deconvolutions."
               </p>
-              <ul className="list-disc pl-5 space-y-2 text-slate-600">
-                <li>Analyzing complicated electrochemical interphases by decomposing macroscopic kinetic observations into precise models of chemical polarization, ohmic resistance, and junction potentials.</li>
-                <li>Tackling critical bottlenecks in realistic electrochemical interfaces—such as localized phase separations, contact resistance limits, and space-charge layers.</li>
-                <li>Leveraging versatile characterization platforms (e.g., Synchrotron X-ray Spectroscopy and in-situ electro-analysis) to provide definitive experimental validation for complex thermodynamic models.</li>
-              </ul>
+              <p className="text-slate-600 leading-relaxed">
+                My overarching aspiration lies in thoroughly decomposing macroscopic kinetic observations into exact models of localized phase separations and thermodynamic driving forces. By leveraging advanced analytical platforms, I intend to provide definitive validations for highly non-ideal electrochemical interfaces.
+              </p>
             </div>
           </section>
         </div>
