@@ -29,9 +29,15 @@ export default function Publications() {
     <div className="flex flex-col gap-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header className="flex flex-col gap-4">
         <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Publications</h1>
-        <p className="max-w-2xl text-lg text-slate-600">
-          A selection of our peer-reviewed articles. For a full list, please visit my <a href="https://scholar.google.com/citations?user=O_j4EIEAAAAJ" target="_blank" className="font-semibold text-[#FF6C0C] hover:underline transition-colors">Google Scholar</a> profile.
-        </p>
+        <div className="flex flex-col sm:flex-row gap-5 sm:items-center mt-2 mb-4">
+          <p className="max-w-xl text-lg text-slate-600 leading-relaxed">
+            A selection of my peer-reviewed articles and research contributions.
+          </p>
+          <a href="https://scholar.google.com/citations?user=O_j4EIEAAAAJ" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-100/80 text-slate-800 font-bold rounded-full hover:bg-[#A31F34] hover:text-white transition-all duration-300 whitespace-nowrap w-fit shadow-sm border border-slate-200 group">
+            <span className="text-xl group-hover:scale-110 transition-transform">🎓</span>
+            <span>Google Scholar</span>
+          </a>
+        </div>
       </header>
 
       <div className="flex flex-col gap-12">
