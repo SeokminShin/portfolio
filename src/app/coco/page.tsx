@@ -22,21 +22,13 @@ export default function CocoGallery() {
         </p>
       </header>
 
-      {/* Gallery Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
         {photos.map((photo, i) => (
-          <div key={i} className="relative aspect-square bg-slate-50 rounded-2xl border-4 border-dashed border-slate-200 flex flex-col items-center justify-center text-slate-400 group hover:border-[#FF6C0C]/50 hover:bg-[#FF6C0C]/5 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl cursor-pointer overflow-hidden">
-            {/* The image component gracefully shows a fallback UI if the file isn't uploaded yet */}
-            <img src={photo.src} alt={photo.title} className="absolute inset-0 w-full h-full object-cover z-0" />
+          <div key={i} className="relative aspect-square bg-slate-100 rounded-2xl border-2 border-slate-200 flex flex-col items-center justify-end group hover:border-[#FF6C0C]/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-2xl cursor-pointer overflow-hidden pb-4 px-3">
+            <img src={photo.src} alt={photo.title} className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-110 transition-transform duration-700" />
             
-            <div className="relative z-10 flex flex-col items-center p-4 bg-white/80 rounded-xl backdrop-blur-sm opacity-100 group-hover:opacity-0 transition-opacity duration-500 text-center">
-              <span className="text-4xl mb-3">📸</span>
-              <span className="text-sm font-bold text-slate-600 px-2">{photo.title}</span>
-              <span className="text-xs font-mono text-slate-400 mt-2">public{photo.src}</span>
-            </div>
-            
-            <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-               <p className="text-white font-bold text-sm text-center">{photo.title}</p>
+            <div className="relative z-10 w-full flex flex-col items-center justify-center p-3 bg-white/30 backdrop-blur-md rounded-xl opacity-90 group-hover:opacity-100 group-hover:bg-white/60 transition-all duration-300 text-center shadow-sm border border-white/20">
+              <span className="text-sm font-bold text-slate-900 drop-shadow-sm">{photo.title}</span>
             </div>
           </div>
         ))}
