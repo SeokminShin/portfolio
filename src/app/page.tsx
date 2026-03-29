@@ -49,7 +49,7 @@ export default function Home() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              tag: "Ph.D. Research Theme",
+              tag: "Previous Research Theme",
               title: "Fitting Specific Reaction Intermediates",
               date: "UNIST (~2024)",
               description: "Overcame linear scaling relationships (LSRs) via atomic-scale spacing and self-tandem active sites to drive complex multi-reactant electrocatalysis.",
