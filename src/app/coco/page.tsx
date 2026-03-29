@@ -5,8 +5,8 @@ export default function CocoGallery() {
   const photos = [
     { src: "/coco/placeholder1.jpg", title: "Sleeping on duty" },
     { src: "/coco/placeholder2.jpg", title: "Reviewing thermodynamic derivations" },
-    { src: "/coco/placeholder3.jpg", title: "Playtime during incubation" },
-    { src: "/coco/placeholder4.jpg", title: "Barking at non-ideal solutions" },
+    { src: "/coco/placeholder3.jpg", title: "Playtime during cyclic voltammetry" },
+    { src: "/coco/placeholder4.jpg", title: "Barking at non-ideal behavior" },
     { src: "/coco/placeholder5.jpg", title: "Morning walk" },
     { src: "/coco/placeholder6.jpg", title: "Evaluating battery cyclic data" },
   ];
@@ -19,7 +19,7 @@ export default function CocoGallery() {
         </div>
         <h1 className="text-5xl font-extrabold tracking-tight text-slate-900">Coco's Gallery 🐾</h1>
         <p className="max-w-2xl text-lg text-slate-600 mt-2">
-          The official archive of Coco's cutest moments. Second advisor, stress reliever, and the true mastermind behind all great electrochemical properties.
+          The official archive of Coco's cutest moments. Principal Paw-vestigator (PI), stress reliever, and the true mastermind behind all great electrochemical properties.
         </p>
       </header>
 
