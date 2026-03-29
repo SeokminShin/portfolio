@@ -4,8 +4,8 @@ export default function CocoGallery() {
   const photos = [
     { src: "/coco/1.jpg", title: "Sleeping on duty" },
     { src: "/coco/2.jpg", title: "Reviewing thermodynamic derivations" },
-    { src: "/coco/3.jpg", title: "Playtime during cyclic voltammetry" },
-    { src: "/coco/4.jpg", title: "Barking at non-ideal behavior" },
+    { src: "/coco/3.jpg", title: "Barking at non-ideal behavior" },
+    { src: "/coco/4.jpg", title: "Playtime during cyclic voltammetry" },
     { src: "/coco/5.jpg", title: "Morning walk" },
     { src: "/coco/6.jpg", title: "Evaluating battery cyclic data" },
   ];
