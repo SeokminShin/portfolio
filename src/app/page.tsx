@@ -11,7 +11,7 @@ export default function Home() {
             Seokmin Shin
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed md:text-xl">
-            I am an electrochemist and researcher. My work bridges explicit macro-scale experimental observations with fundamental solid-state electrochemical thermodynamics. I utilize advanced operando characterizations and rigorous thermodynamic frameworks to decipher complex ambipolar charge transport, chemical capacitance, and hidden kinetic behaviors in mixed ionic-electronic conductors and novel energy systems.
+            I am an electrochemist and researcher. My work bridges explicit macro-scale experimental observations with fundamental precision. I utilize advanced operando characterizations and rigorous physicochemical frameworks to decipher complex interfacial charge transport, chemical capacitance, and hidden thermodynamic behaviors in novel energy systems.
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4">
             <Link 
@@ -49,9 +49,9 @@ export default function Home() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              title: "Electrochemical Co-reduction",
+              title: "Multi-reactant Electrocatalysis",
               date: "2023 - 2024",
-              description: "Understanding catalytic mechanisms under competing reactants and developing catalysts for CO2/nitrate co-reduction to urea.",
+              description: "Investigating mechanisms under competing reactants and developing catalysts for complex multi-reactant electrochemical systems.",
             },
             {
               title: "Gordon Research Conference",
@@ -72,6 +72,24 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      {/* Coco Section */}
+      <section className="flex flex-col items-center gap-6 pt-12 pb-8 border-t-2 border-dashed border-slate-200 mt-8">
+        <div className="flex items-center gap-3">
+          <svg className="w-8 h-8 text-[#FF6C0C]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.5C13.4 6.5 14.5 5.4 14.5 4S13.4 1.5 12 1.5 9.5 2.6 9.5 4 10.6 6.5 12 6.5ZM19 7C20.4 7 21.5 5.9 21.5 4.5S20.4 2 19 2 16.5 3.1 16.5 4.5 17.6 7 19 7ZM5 7C6.4 7 7.5 5.9 7.5 4.5S6.4 2 5 2 2.5 3.1 2.5 4.5 3.6 7 5 7ZM19 8.5C17.6 8.5 16.5 9.6 16.5 11S17.6 13.5 19 13.5 21.5 12.4 21.5 11 20.4 8.5 19 8.5ZM5 8.5C3.6 8.5 2.5 9.6 2.5 11S3.6 13.5 5 13.5 7.5 12.4 7.5 11 6.4 8.5 5 8.5ZM12 8C9.5 8 7 9.5 7 13.5C7 17.5 9.5 22 12 22S17 17.5 17 13.5C17 9.5 14.5 8 12 8Z"/></svg>
+          <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">Meet Coco!</h2>
+          <svg className="w-8 h-8 text-[#FF6C0C]" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.5C13.4 6.5 14.5 5.4 14.5 4S13.4 1.5 12 1.5 9.5 2.6 9.5 4 10.6 6.5 12 6.5ZM19 7C20.4 7 21.5 5.9 21.5 4.5S20.4 2 19 2 16.5 3.1 16.5 4.5 17.6 7 19 7ZM5 7C6.4 7 7.5 5.9 7.5 4.5S6.4 2 5 2 2.5 3.1 2.5 4.5 3.6 7 5 7ZM19 8.5C17.6 8.5 16.5 9.6 16.5 11S17.6 13.5 19 13.5 21.5 12.4 21.5 11 20.4 8.5 19 8.5ZM5 8.5C3.6 8.5 2.5 9.6 2.5 11S3.6 13.5 5 13.5 7.5 12.4 7.5 11 6.4 8.5 5 8.5ZM12 8C9.5 8 7 9.5 7 13.5C7 17.5 9.5 22 12 22S17 17.5 17 13.5C17 9.5 14.5 8 12 8Z"/></svg>
+        </div>
+        <p className="text-center text-slate-600 max-w-lg">
+          My deeply beloved dog, <strong>Coco</strong>, who acts as my second advisor and provides endless emotional support during long hours of research. I will be updating this section with cute photos soon!
+        </p>
+        <div className="w-48 h-48 rounded-full border-[6px] border-dashed border-[#FF6C0C]/30 flex items-center justify-center bg-[#FF6C0C]/5 text-[#FF6C0C]/70 shadow-inner transform transition hover:scale-105 hover:rotate-6 cursor-pointer">
+          <span className="text-sm font-bold flex flex-col items-center gap-2">
+            🐶<br/>[Photo coming soon]
+          </span>
+        </div>
+      </section>
+
     </div>
   );
 }
