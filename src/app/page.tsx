@@ -11,7 +11,7 @@ export default function Home() {
             Seokmin Shin
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed md:text-xl">
-            I am an electrochemist and researcher. My work bridges explicit macro-scale experimental observations with fundamental precision. I utilize advanced operando characterizations and rigorous physicochemical frameworks to decipher complex interfacial charge transport, chemical capacitance, and hidden thermodynamic behaviors in novel energy systems.
+            My research interests lie in understanding the fundamental driving forces behind complex electrochemical phenomena. I aim to bridge macroscopic experimental observations with rigorous physicochemical frameworks. By utilizing advanced operando characterizations, I seek to decipher interfacial charge transport, chemical capacitance, and hidden thermodynamic behaviors in various electrochemical processes.
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4">
             <Link 
