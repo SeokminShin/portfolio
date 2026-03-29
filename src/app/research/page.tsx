@@ -2,37 +2,53 @@ export default function Research() {
   return (
     <div className="flex flex-col gap-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
       <header className="flex flex-col gap-4">
-        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Research Areas</h1>
+        <h1 className="text-4xl font-extrabold tracking-tight text-slate-900">Research Interests</h1>
         <p className="max-w-3xl text-lg text-slate-600">
-          Our group focuses on understanding the thermodynamic and kinetic properties of materials to build better energy storage and conversion devices. By isolating atomic and mesoscopic interactions, we push the frontiers of modern electrochemistry.
+          Seeking rigorous theoretical and mechanistic frameworks grounded in experimental electrochemistry, with transformational exposure to frontier research in energy conversion systems.
         </p>
       </header>
       
-      <div className="flex flex-col gap-16">
-        {/* Topic 1 */}
-        <section className="flex flex-col md:flex-row gap-8 items-start">
-          <div className="w-full md:w-1/3 aspect-video bg-blue-50 rounded-xl border border-blue-100 flex items-center justify-center text-blue-400 overflow-hidden shadow-inner">
-             {/* Replace with actual image later */}
-             <span className="text-sm font-medium">Degradation Visualization</span>
-          </div>
-          <div className="flex flex-col gap-4 md:w-2/3">
-            <h2 className="text-2xl font-bold text-slate-900">Battery Degradation Mechanisms</h2>
-            <p className="text-slate-600 leading-relaxed">
-              We investigate how materials degrade over time. By probing battery heterogeneity, we can isolate the primary factors that lead to capacity fade, from contact resistance increases to microscopic phase separations. Understanding these mechanics is crucial to designing longer-lasting cells.
+      <div className="flex flex-col gap-12">
+        <section className="flex flex-col gap-4">
+          <h2 className="text-2xl font-bold text-[#A31F34]">Electrochemistry based on Theoretical & Thermochemical Frameworks</h2>
+          <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#FF6C0C] transition-all">
+            <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-[#A31F34] italic">
+              "Understanding proton/electron transfer under electro-/thermochemical regime by the language of quantum mechanics."
             </p>
+            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+              <li>Investigating mechanistic frameworks that bridge electrochemical kinetics (e.g., Butler-Volmer, Marcus theory) with thermochemical free energy landscapes.</li>
+              <li>Exploring quantum mechanical models of electron/proton transfer in electrocatalysis focusing on tunneling and nonadiabatic transitions.</li>
+              <li>Applying chemical potential-based frameworks to interpret PCET and bond activations.</li>
+            </ul>
           </div>
         </section>
 
-        {/* Topic 2 */}
-        <section className="flex flex-col md:flex-row-reverse gap-8 items-start">
-          <div className="w-full md:w-1/3 aspect-video bg-indigo-50 rounded-xl border border-indigo-100 flex items-center justify-center text-indigo-400 overflow-hidden shadow-inner">
-             <span className="text-sm font-medium">Charge Transport Model</span>
-          </div>
-          <div className="flex flex-col gap-4 md:w-2/3">
-            <h2 className="text-2xl font-bold text-slate-900">Advanced Charge Transport</h2>
-            <p className="text-slate-600 leading-relaxed">
-              Bridging the gap between empirical observations and fundamental theories. We analyze the pitfalls of common mobility concepts and study non-classical phenomena, such as T-squared resistivity in novel perovskites, to discover more efficient conductive materials.
+        <section className="flex flex-col gap-4">
+          <h2 className="text-2xl font-bold text-[#A31F34]">Mechanistic Electrocatalysis & Analytical System Design</h2>
+          <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#FF6C0C] transition-all">
+             <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-[#FF6C0C] italic">
+              "Deconvolution of kinetic factors for mechanism study using electrochemical analysis."
             </p>
+            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+              <li>Fundamental understanding of electrochemical interphases (phase boundaries of system).</li>
+              <li>Exploring to circumvent energetic LSRs through interfacial intermediate modulation and altered PCET.</li>
+              <li>Designing cell systems for the analytical deconvolution of kinetic factors during electrocatalysis.</li>
+              <li>Deconvolution of mechanistic factors from observed kinetics through advanced electro-analysis.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="flex flex-col gap-4">
+          <h2 className="text-2xl font-bold text-[#A31F34]">Operando and in-situ Analysis</h2>
+          <div className="p-6 rounded-xl border border-slate-200 bg-white shadow-sm hover:shadow-md hover:border-[#FF6C0C] transition-all">
+            <p className="text-slate-700 font-semibold mb-4 bg-slate-50 p-3 rounded border-l-4 border-slate-400 italic">
+              "Mechanism study utilizing various operando and in-situ analysis."
+            </p>
+            <ul className="list-disc pl-5 space-y-2 text-slate-600">
+              <li>Study of PCET dynamics and bond formation using X-ray based techniques (XAFS, STXM).</li>
+              <li>Study of electron transfer to surface adsorbed species using spectroscopy analysis (Raman, electrochemical scanning transmission).</li>
+              <li>Development of in-situ/operando analytical systems for dynamic analysis.</li>
+            </ul>
           </div>
         </section>
       </div>

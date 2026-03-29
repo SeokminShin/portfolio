@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -5,60 +6,67 @@ export default function Home() {
     <div className="flex flex-col gap-16 animate-in fade-in duration-700">
       {/* Hero Section */}
       <section className="flex flex-col-reverse items-center justify-between gap-12 sm:flex-row">
-        <div className="flex flex-col gap-6 sm:w-2/3">
-          <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-            Stephen Dongmin Kang
+        <div className="flex flex-col gap-6 sm:w-[65%] text-center sm:text-left">
+          <h1 className="text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#A31F34] to-[#FF6C0C] sm:text-5xl py-1 pb-2">
+            Seokmin Shin
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed md:text-xl">
-            I am a researcher and faculty member in Materials Science. My work focuses on the fundamentals of electronic and ionic transport, utilizing advanced characterization techniques to build a better understanding of novel materials.
+            I am an electrochemist and researcher. My work focuses on mechanistic electrocatalysis, utilizing quantum mechanical frameworks, PCET theories, and advanced operando characterizations to understand and build better energy systems.
           </p>
-          <div className="flex items-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4">
             <Link 
               href="/research" 
-              className="inline-flex h-12 items-center justify-center rounded-md bg-blue-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-700"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-[#A31F34] px-6 text-sm font-medium text-white shadow-md transition-all hover:bg-[#85192A] hover:-translate-y-0.5"
             >
               Explore Research
             </Link>
             <Link 
               href="/publications" 
-              className="inline-flex h-12 items-center justify-center rounded-md border border-slate-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-slate-950"
+              className="inline-flex h-11 items-center justify-center rounded-md border-2 border-slate-200 bg-white px-6 text-sm font-medium shadow-sm transition-all hover:border-[#FF6C0C] hover:text-[#FF6C0C] hover:-translate-y-0.5"
             >
               View Publications
             </Link>
+            <a 
+              href="/CV_SeokminShin.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-11 items-center justify-center rounded-md bg-slate-100 text-slate-800 px-6 text-sm font-bold shadow-sm transition-all hover:bg-slate-200 hover:text-slate-900 border border-slate-200 hover:-translate-y-0.5"
+            >
+              📥 View CV
+            </a>
           </div>
         </div>
-        <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-full border-4 border-white shadow-xl sm:h-64 sm:w-64">
-           {/* Placeholder for Profile Picture */}
-           <div className="absolute inset-0 bg-slate-200 flex items-center justify-center text-slate-400">
-             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-           </div>
+        <div className="sm:w-[35%] flex justify-center sm:justify-end">
+          <div className="relative h-44 w-44 shrink-0 overflow-hidden rounded-full border-[5px] border-white shadow-xl sm:h-56 sm:w-56 transform transition duration-500 hover:scale-105 hover:rotate-1">
+             <Image src="/Seokmin.jpg" alt="Seokmin Shin Profile Picture" fill className="object-cover" priority />
+          </div>
         </div>
       </section>
 
       {/* Highlights / News Section */}
-      <section className="flex flex-col gap-6">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900 border-b border-slate-200 pb-2">Recent Highlights</h2>
+      <section className="flex flex-col gap-6 pt-4">
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900 border-b-2 border-slate-100 pb-2">Experience Highlights</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              title: "Probing the Depths of Battery Heterogeneity",
-              date: "Mar 2026",
-              description: "New insights into how battery degradation occurs at the microscopic level.",
+              title: "Electrochemical Co-reduction",
+              date: "2023 - 2024",
+              description: "Understanding catalytic mechanisms under competing reactants and developing catalysts for CO2/nitrate co-reduction to urea.",
             },
             {
-              title: "To Start at Seoul National University as Faculty",
-              date: "Feb 2026",
-              description: "Excited to share that I will be joining SNU MSE as an Assistant Professor.",
+              title: "Gordon Research Conference",
+              date: "Jan 2024",
+              description: "Presented research on electrochemical C-N bond formation from Carbon Dioxide and Nitrogen Oxygenates.",
             },
             {
-              title: "Contact resistance: important in battery electrodes!",
-              date: "Jan 2026",
-              description: "Published our new findings on contact resistance limits in modern electrodes.",
+              title: "Samsung Human-Tech Award",
+              date: "Spring 2024",
+              description: "Received paper awards from Samsung Advanced Institute of Technology for outstanding research.",
             }
           ].map((item, i) => (
-            <div key={i} className="group relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-blue-200 cursor-pointer">
-              <p className="text-xs font-medium text-blue-600 mb-2">{item.date}</p>
-              <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">{item.title}</h3>
+            <div key={i} className="group relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:border-[#FF6C0C] cursor-pointer">
+              <p className="text-xs font-bold text-[#A31F34] mb-2">{item.date}</p>
+              <h3 className="font-semibold text-slate-900 group-hover:text-[#FF6C0C] transition-colors mb-2">{item.title}</h3>
               <p className="text-sm text-slate-600">{item.description}</p>
             </div>
           ))}
