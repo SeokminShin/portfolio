@@ -24,6 +24,7 @@ export default function RootLayout({
               S<span className="text-[#A31F34] transition-colors group-hover:text-[#FF6C0C]">.</span> Shin
             </Link>
             <div className="flex gap-6 text-sm font-medium text-slate-600">
+              <Link href="/" className="transition-colors hover:text-slate-900">Home</Link>
               <Link href="/research" className="transition-colors hover:text-slate-900">Research</Link>
               <Link href="/publications" className="transition-colors hover:text-slate-900">Publications</Link>
               <Link href="/posts" className="transition-colors hover:text-[#FF6C0C]">Blog</Link>

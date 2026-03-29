@@ -83,11 +83,11 @@ export default function Home() {
         <p className="text-center text-slate-600 max-w-lg">
           My deeply beloved dog, <strong>Coco</strong>, who acts as my second advisor and provides endless emotional support during long hours of research. I will be updating this section with cute photos soon!
         </p>
-        <div className="w-48 h-48 rounded-full border-[6px] border-dashed border-[#FF6C0C]/30 flex items-center justify-center bg-[#FF6C0C]/5 text-[#FF6C0C]/70 shadow-inner transform transition hover:scale-105 hover:rotate-6 cursor-pointer">
-          <span className="text-sm font-bold flex flex-col items-center gap-2">
-            🐶<br/>[Photo coming soon]
+        <Link href="/coco" className="w-48 h-48 rounded-full border-[6px] border-dashed border-[#FF6C0C]/30 flex items-center justify-center bg-[#FF6C0C]/5 text-[#FF6C0C]/70 shadow-inner transform transition duration-300 hover:scale-105 hover:rotate-6 cursor-pointer group">
+          <span className="text-sm font-bold flex flex-col items-center gap-2 group-hover:text-[#FF6C0C] transition-colors">
+            🐶<br/>[Click to view gallery]
           </span>
-        </div>
+        </Link>
       </section>
 
     </div>
