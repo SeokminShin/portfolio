@@ -83,10 +83,10 @@ export default function Home() {
         <p className="text-center text-slate-600 max-w-lg">
           My deeply beloved puppy, <strong>Coco</strong>, who acts as my Principal Paw-vestigator and provides endless emotional support during long hours of research.
         </p>
-        <Link href="/coco" className="relative overflow-hidden w-48 h-48 rounded-full border-[6px] border-dashed border-[#FF6C0C]/30 flex items-center justify-center bg-[#FF6C0C]/5 text-[#FF6C0C]/70 shadow-inner transform transition duration-300 hover:scale-105 hover:rotate-6 cursor-pointer group">
-          <img src="/coco/main.jpg" alt="Coco" className="absolute inset-0 w-full h-full object-cover z-0" />
-          <span className="relative z-10 text-sm font-bold flex flex-col items-center gap-2 group-hover:text-[#FF6C0C] bg-white/80 px-3 py-2 rounded-xl backdrop-blur-sm transition-colors">
-            🐶<br/>[Click to view gallery]
+        <Link href="/coco" className="relative overflow-hidden w-48 h-48 rounded-full border-[6px] border-[#FF6C0C]/30 flex flex-col items-center justify-end bg-slate-100 shadow-xl transform transition duration-500 hover:scale-105 hover:rotate-3 cursor-pointer group pb-4">
+          <img src="/coco/main.jpg" alt="Coco" className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-110 transition-transform duration-700" />
+          <span className="relative z-10 text-xs font-bold flex flex-col items-center gap-1 group-hover:text-[#FF6C0C] bg-white/40 px-3 py-1.5 rounded-full backdrop-blur-md transition-colors text-slate-900 shadow-sm border border-white/20">
+            🐶 View Gallery
           </span>
         </Link>
       </section>
