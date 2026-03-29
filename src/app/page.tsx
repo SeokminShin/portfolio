@@ -43,31 +43,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Highlights / News Section */}
+      {/* Milestones Section */}
       <section className="flex flex-col gap-6 pt-4">
-        <h2 className="text-2xl font-bold tracking-tight text-slate-900 border-b-2 border-slate-100 pb-2">Experience Highlights</h2>
+        <h2 className="text-2xl font-bold tracking-tight text-slate-900 border-b-2 border-slate-100 pb-2">Key Milestones & Topics</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
+              tag: "Research Topic",
               title: "Multi-reactant Electrocatalysis",
               date: "2023 - 2024",
               description: "Investigating mechanisms under competing reactants and developing catalysts for complex multi-reactant electrochemical systems.",
             },
             {
+              tag: "Presentation",
               title: "Gordon Research Conference",
               date: "Jan 2024",
               description: "Presented research on electrochemical C-N bond formation from Carbon Dioxide and Nitrogen Oxygenates.",
             },
             {
+              tag: "Award",
               title: "Samsung Human-Tech Award",
               date: "Spring 2024",
               description: "Received paper awards from Samsung Advanced Institute of Technology for outstanding research.",
             }
           ].map((item, i) => (
             <div key={i} className="group relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:border-[#FF6C0C] cursor-pointer">
-              <p className="text-xs font-bold text-[#A31F34] mb-2">{item.date}</p>
-              <h3 className="font-semibold text-slate-900 group-hover:text-[#FF6C0C] transition-colors mb-2">{item.title}</h3>
-              <p className="text-sm text-slate-600">{item.description}</p>
+              <div className="flex justify-between items-center mb-3">
+                <span className="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-[#A31F34] bg-[#A31F34]/10 rounded-full">{item.tag}</span>
+                <span className="text-xs font-bold text-slate-500">{item.date}</span>
+              </div>
+              <h3 className="font-bold text-lg text-slate-900 group-hover:text-[#FF6C0C] transition-colors mb-2">{item.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
