@@ -49,7 +49,7 @@ export default function Home() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              tag: "Previous Research Theme",
+              tag: "Previous Research",
               title: "Fitting Specific Reaction Intermediates",
               date: "UNIST (~2024)",
               description: "Overcame linear scaling relationships (LSRs) via atomic-scale spacing and self-tandem active sites to drive complex multi-reactant electrocatalysis.",
@@ -68,9 +68,13 @@ export default function Home() {
             }
           ].map((item, i) => (
             <div key={i} className="group relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:border-[#FF6C0C] cursor-pointer">
-              <div className="flex justify-between items-center mb-3">
-                <span className="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-[#A31F34] bg-[#A31F34]/10 rounded-full">{item.tag}</span>
-                <span className="text-xs font-bold text-slate-500">{item.date}</span>
+              <div className="flex justify-between items-start gap-2 mb-3">
+                <span className="inline-flex px-2.5 py-1 text-[10px] leading-tight font-extrabold uppercase tracking-wider text-[#A31F34] bg-[#A31F34]/10 rounded-md text-left">
+                  {item.tag}
+                </span>
+                <span className="text-[11px] font-bold text-slate-500 shrink-0 mt-0.5">
+                  {item.date}
+                </span>
               </div>
               <h3 className="font-bold text-lg text-slate-900 group-hover:text-[#FF6C0C] transition-colors mb-2">{item.title}</h3>
               <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
