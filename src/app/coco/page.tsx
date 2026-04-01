@@ -25,7 +25,7 @@ export default function CocoGallery() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-4">
         {photos.map((photo, i) => (
           <div key={i} className="relative aspect-square bg-slate-100 rounded-2xl border-2 border-slate-200 flex flex-col items-center justify-end group hover:border-[#FF6C0C]/50 transition-all duration-500 transform hover:-translate-y-1 hover:shadow-2xl cursor-pointer overflow-hidden pb-4 px-3">
-            <img src={photo.src} alt={photo.title} className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-110 transition-transform duration-700" />
+            <img src={photo.src} alt={photo.title} className="absolute inset-0 w-full h-full object-contain z-0 group-hover:scale-105 transition-transform duration-700" />
             
             <div className="relative z-10 w-full flex flex-col items-center justify-center p-3 bg-white/30 backdrop-blur-md rounded-xl opacity-90 group-hover:opacity-100 group-hover:bg-white/60 transition-all duration-300 text-center shadow-sm border border-white/20">
               <span className="text-sm font-bold text-slate-900 drop-shadow-sm">{photo.title}</span>
