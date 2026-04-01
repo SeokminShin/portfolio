@@ -51,7 +51,7 @@ export default function Home() {
         </div>
         <div className="sm:w-[35%] flex justify-center sm:justify-end">
           <div className="relative h-44 w-44 shrink-0 overflow-hidden rounded-full border-[5px] border-white shadow-xl sm:h-56 sm:w-56 transform transition duration-500 hover:scale-105 hover:rotate-1">
-             <Image src="/Seokmin.jpg" alt="Seokmin Shin Profile Picture" fill className="object-cover" priority />
+             <Image src="/portfolio/Seokmin.jpg" alt="Seokmin Shin Profile Picture" fill className="object-cover" priority />
           </div>
         </div>
       </section>
