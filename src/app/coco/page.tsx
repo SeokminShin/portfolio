@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 export default function CocoGallery() {
   const photos = [
-    { src: "/coco/1.jpg", title: "Sleeping on duty" },
-    { src: "/coco/2.jpg", title: "Reviewing thermodynamic derivations" },
-    { src: "/coco/3.jpg", title: "Barking at non-ideal behavior" },
-    { src: "/coco/4.jpg", title: "Playtime during cyclic voltammetry" },
-    { src: "/coco/5.jpg", title: "Morning walk" },
-    { src: "/coco/6.jpg", title: "Evaluating battery cyclic data" },
+    { src: "/portfolio/coco/1.jpg", title: "Sleeping on duty" },
+    { src: "/portfolio/coco/2.jpg", title: "Reviewing thermodynamic derivations" },
+    { src: "/portfolio/coco/3.jpg", title: "Barking at non-ideal behavior" },
+    { src: "/portfolio/coco/4.jpg", title: "Playtime during cyclic voltammetry" },
+    { src: "/portfolio/coco/5.jpg", title: "Morning walk" },
+    { src: "/portfolio/coco/6.jpg", title: "Evaluating battery cyclic data" },
   ];
 
   return (
