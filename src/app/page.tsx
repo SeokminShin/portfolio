@@ -1,7 +1,22 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [isCVOpen, setIsCVOpen] = useState(false);
+
+  // Prevent scrolling when modal is open
+  useEffect(() => {
+    if (isCVOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isCVOpen]);
+
   return (
     <div className="flex flex-col gap-16 animate-in fade-in duration-700">
       {/* Hero Section */}
@@ -11,7 +26,7 @@ export default function Home() {
             Seokmin Shin
           </h1>
           <p className="text-lg text-slate-600 leading-relaxed md:text-xl">
-            My research interests lie in understanding the fundamental driving forces behind complex electrochemical phenomena. I aim to bridge macroscopic experimental observations with exact physicochemical frameworks. Guided by rigorous thermodynamic derivations, I strive to decipher complex interfacial charge transport, chemical capacitance, and hidden kinetic behaviors across various electrochemical processes.
+            My research interests lie in understanding the fundamental driving forces behind complex electrochemical phenomena. I aim to bridge macroscopic experimental observations with precise physicochemical frameworks. Guided by rigorous thermodynamic derivations, I strive to decouple complex interfacial charge transport, chemical capacitance, and hidden kinetic behaviors across various electrochemical processes.
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 pt-4">
             <Link 
@@ -26,14 +41,12 @@ export default function Home() {
             >
               View Publications
             </Link>
-            <a 
-              href="/CV_SeokminShin.pdf" 
-              target="_blank"
-              rel="noopener noreferrer"
+            <button 
+              onClick={() => setIsCVOpen(true)}
               className="inline-flex h-11 items-center justify-center rounded-md bg-slate-100 text-slate-800 px-6 text-sm font-bold shadow-sm transition-all hover:bg-slate-200 hover:text-slate-900 border border-slate-200 hover:-translate-y-0.5"
             >
-              📥 View CV
-            </a>
+              📥 Preview CV
+            </button>
           </div>
         </div>
         <div className="sm:w-[35%] flex justify-center sm:justify-end">
@@ -70,7 +83,7 @@ export default function Home() {
             <div key={i} className="group relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg hover:-translate-y-1 hover:border-[#FF6C0C] cursor-pointer">
               <div className="flex justify-between items-start gap-2 mb-3">
                 <span className="inline-flex px-2.5 py-1 text-[10px] leading-tight font-extrabold uppercase tracking-wider text-[#A31F34] bg-[#A31F34]/10 rounded-md text-left">
-                  {item.tag}
+                   {item.tag}
                 </span>
                 <span className="text-[11px] font-bold text-slate-500 shrink-0 mt-0.5">
                   {item.date}
@@ -80,6 +93,30 @@ export default function Home() {
               <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Blog/Reflections Section */}
+      <section className="flex flex-col gap-8 pt-8">
+        <div className="flex items-center justify-between border-b-2 border-slate-100 pb-2">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900">Latest Reflections</h2>
+          <Link href="/posts" className="text-sm font-bold text-[#FF6C0C] hover:underline flex items-center gap-1 group">
+            All Posts <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </Link>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
+          <Link href="/posts/academic-transition" className="group p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#A31F34]">
+            <span className="text-xs font-bold text-[#A31F34] uppercase tracking-wider">Featured Essay</span>
+            <h3 className="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-[#A31F34] transition-colors">The Turning Point: From Catalysis to Fundamental Thermodynamics</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Reflections on the limitations of macroscopic screening and my deliberate pivot towards fundamental electrochemical and physical frameworks.
+            </p>
+          </Link>
+          
+          <div className="flex flex-col justify-center p-8 rounded-2xl bg-[#A31F34]/5 border border-[#A31F34]/20 border-dashed">
+            <h3 className="font-bold text-slate-900 mb-2">Synthesis in Progress</h3>
+            <p className="text-sm text-slate-500 italic">"A dedicated space for emerging hypotheses, rigorous literature critiques, and evolving perspectives on the thermodynamic foundations of electrochemical energy systems."</p>
+          </div>
         </div>
       </section>
 
@@ -101,6 +138,46 @@ export default function Home() {
         </Link>
       </section>
 
+      {/* CV Modal Overlay */}
+      {isCVOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-10 bg-slate-900/90 backdrop-blur-sm animate-in fade-in duration-300">
+          <div className="relative w-full max-w-5xl h-full bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-300">
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
+              <div className="flex items-center gap-3">
+                <span className="bg-[#A31F34] text-white p-2 rounded-lg font-bold text-xs">PDF</span>
+                <h3 className="font-bold text-slate-900">Curriculum Vitae - Seokmin Shin</h3>
+              </div>
+              <div className="flex items-center gap-4">
+                <a href="/CV_SeokminShin.pdf" download className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-sm font-bold transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Download
+                </a>
+                <button 
+                  onClick={() => setIsCVOpen(false)}
+                  className="p-2 hover:bg-slate-100 rounded-full transition-colors text-slate-500 hover:text-slate-900"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+            </div>
+            {/* PDF Viewer */}
+            <div className="flex-1 bg-slate-100 p-2 sm:p-6 overflow-auto">
+              <iframe 
+                src="/CV_SeokminShin.pdf#toolbar=0" 
+                className="w-full h-full rounded-md shadow-inner border border-slate-300 bg-white"
+                title="CV Preview"
+              />
+            </div>
+            {/* Modal Footer (Mobile Download) */}
+            <div className="sm:hidden p-4 border-t border-slate-200 bg-white">
+              <a href="/CV_SeokminShin.pdf" download className="flex items-center justify-center gap-2 w-full py-3 bg-[#A31F34] text-white rounded-xl font-bold">
+                Download CV
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
