@@ -35,47 +35,9 @@ export default function Research() {
                 <p>
                   My research focus has evolved from macroscopic material screening toward strictly deciphering the thermodynamic origins of charge transport. By exclusively adhering to <strong>measurable electrochemical observables</strong>, I seek to <strong>decouple</strong> complex interfacial variables—such as <strong>charge transfer kinetics</strong> and <strong>non-ideal transport behaviors</strong>—into precise physical models. 
                 </p>
-              </div>
-            </div>
-          </section>
-
-          {/* NEW SECTION: Numerical Audit */}
-          <section className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <h3 className="text-2xl font-bold text-slate-900">Numerical Audit & Diagnostic Reliability</h3>
-              <p className="text-slate-500 font-medium">Quantifying interpretation artifacts in transient electrochemical techniques.</p>
-            </div>
-            
-            <div className="grid lg:grid-cols-5 gap-8 items-center bg-slate-50 rounded-3xl p-8 border border-slate-200">
-              <div className="lg:col-span-3 flex flex-col gap-5">
-                <p className="text-slate-700 leading-relaxed">
-                  I specialize in performing <strong>numerical audits</strong> on widely used electrochemical diagnostic protocols (e.g., GEIS, LA-GEIS). By reconstructing synthetic datasets from physically-grounded ODE solvers, I identify systematic artifacts—such as the <strong>'Symmetry Trap'</strong>—where conventional interpretation methods yield distorted kinetic parameters ($\alpha, i_0$).
+                <p>
+                  This transition represents a deliberate move towards providing definitive validations for transport and kinetic behaviors in <strong>highly non-ideal energy systems</strong>, bridging macroscopic observations with the underlying <strong>interfacial charge dynamics</strong>.
                 </p>
-                <ul className="flex flex-col gap-3">
-                  {[
-                    "Identification of structural artifacts in non-linear interpretations",
-                    "Robustness auditing of diagnostic reliability via synthetic recovery tests",
-                    "Physically-consistent parameter extraction in non-ideal energy systems"
-                  ].map((bullet, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm text-slate-600 font-medium">
-                      <span className="mt-1 w-1.5 h-1.5 rounded-full bg-[#FF6C0C] shrink-0" />
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="lg:col-span-2 relative group mt-4 lg:mt-0">
-                <div className="absolute -inset-2 bg-gradient-to-r from-[#A31F34] to-[#FF6C0C] rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                <div className="relative rounded-xl overflow-hidden border-2 border-white shadow-2xl bg-white">
-                  <img 
-                    src="/portfolio/audit_tafel.png" 
-                    alt="Numerical Audit of Tafel Slope" 
-                    className="w-full h-auto transform transition duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full border border-slate-200 shadow-sm">
-                    <span className="text-[10px] font-bold text-slate-900">Dimensionless Recovery Test</span>
-                  </div>
-                </div>
               </div>
             </div>
           </section>
