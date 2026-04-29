@@ -12,7 +12,7 @@ export default function Research() {
             My academic journey is a continuous evolution from macroscopic catalyst engineering toward unearthing the most fundamental physicochemical rules governing <strong>electrochemical processes</strong>.
           </p>
           <p className="text-base text-slate-500 leading-relaxed border-l-4 border-slate-200 pl-4">
-            <em>This profound shift in my research philosophy was deeply inspired by <a href="https://sdkang.org" target="_blank" rel="noopener noreferrer" className="font-bold text-[#A31F34] hover:underline transition-colors not-italic">Prof. Dongmin Kang</a>. I am immensely grateful for his rigorous framework, and I continuously strive to fill my academic gaps under his guidance.</em>
+            <em>This profound shift in my research philosophy was deeply inspired by <a href="https://sdkang.org" target="_blank" rel="noopener noreferrer" className="font-bold text-[#A31F34] hover:underline transition-colors not-italic">Prof. Stephen Dongmin Kang</a>. I am immensely grateful for his rigorous framework, and I continuously strive to fill my academic gaps under his guidance.</em>
           </p>
         </div>
       </header>
@@ -44,24 +44,44 @@ export default function Research() {
         </div>
       </div>
 
-      {/* THE TURNING POINT (BRIDGE) */}
+      {/* ACADEMIC ESSAYS (BRIDGE) */}
       <div className="relative py-12 my-4">
         <div className="absolute inset-0 flex items-center" aria-hidden="true">
           <div className="w-full border-t-4 border-dashed border-slate-200"></div>
         </div>
-        <div className="relative flex justify-center">
-          <div className="bg-white px-8 py-8 rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center gap-5 text-center max-w-2xl transform transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,108,12,0.15)] hover:border-[#FF6C0C]">
-            <span className="bg-[#FF6C0C]/15 text-[#FF6C0C] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest">The Turning Point</span>
-            <h3 className="text-3xl font-extrabold text-slate-900">My Academic Transition</h3>
-            <p className="text-slate-600 text-base leading-relaxed px-4">
-              Discover why I shifted my focus from surface-level synthetic evaluations towards rigorous thermodynamic and physicochemical frameworks of real energy systems.
-            </p>
-            <Link 
-              href="/posts/academic-transition" 
-              className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#A31F34] focus-visible:outline-none focus-visible:ring-2 hover:scale-105"
-            >
-              Read the full essay &rarr;
-            </Link>
+        <div className="relative flex justify-center w-full">
+          <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl">
+            {/* Card 1 */}
+            <div className="bg-white px-8 py-8 rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center gap-5 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,108,12,0.15)] hover:border-[#FF6C0C]">
+              <span className="bg-[#FF6C0C]/15 text-[#FF6C0C] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest">The Turning Point</span>
+              <h3 className="text-2xl font-extrabold text-slate-900">My Academic Transition</h3>
+              <p className="text-slate-600 text-sm leading-relaxed px-2 flex-grow">
+                Discover why I shifted my focus from surface-level synthetic evaluations towards rigorous thermodynamic and physicochemical frameworks of real energy systems.
+              </p>
+              <div className="text-xs font-bold text-slate-400 mt-auto">April 29, 2026</div>
+              <Link 
+                href="/posts/academic-transition" 
+                className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#A31F34] focus-visible:outline-none focus-visible:ring-2 hover:scale-105 w-full"
+              >
+                Read the full essay &rarr;
+              </Link>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white px-8 py-8 rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center gap-5 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(163,31,52,0.15)] hover:border-[#A31F34]">
+              <span className="bg-[#A31F34]/15 text-[#A31F34] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest">Core Philosophy</span>
+              <h3 className="text-2xl font-extrabold text-slate-900">Catalysis vs Batteries</h3>
+              <p className="text-slate-600 text-sm leading-relaxed px-2 flex-grow">
+                Unraveling the fundamental distinctions between Electrocatalysis and Battery Science through the lens of Chemical Capacitance.
+              </p>
+              <div className="text-xs font-bold text-slate-400 mt-auto">April 29, 2026</div>
+              <Link 
+                href="/posts/chemical-capacitance" 
+                className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#A31F34] focus-visible:outline-none focus-visible:ring-2 hover:scale-105 w-full"
+              >
+                Read the full essay &rarr;
+              </Link>
+            </div>
           </div>
         </div>
       </div>

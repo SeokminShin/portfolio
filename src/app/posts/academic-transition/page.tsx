@@ -13,6 +13,8 @@ export default function AcademicTransitionPost() {
           </Link>
           <span className="text-slate-300">•</span>
           <span>Academic Essay</span>
+          <span className="text-slate-300">•</span>
+          <span className="text-slate-500 font-medium">April 29, 2026</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
           The Turning Point:<br/> From Catalysis to Fundamental Thermodynamics
@@ -35,7 +37,7 @@ export default function AcademicTransitionPost() {
 
         <h3 className="text-2xl font-bold text-slate-900 mt-6 mb-4">The 2024 Gordon Research Conference</h3>
         <p>
-          The true catalyst for my academic transition occurred during the <strong>2024 Gordon Research Conference (GRC) on Electrochemistry</strong>. Interacting with frontier research and the rigorous foundations of the science itself, I was exposed to the stark limitations of conventional models. I realized that merely evaluating half-cell reactions or reporting catalytic trends was insufficient; the real challenge in modern energy conversion devices lies in identifying exactly <strong>what we observe</strong> and how those <strong>measured quantities</strong> can be mapped as <strong>separable variables</strong> within a rigorous theoretical framework. This was the fundamental shift I internalized upon joining <strong>Prof. Dongmin Kang's lab</strong>; his framework provided the exact physicochemical rigor I had been subconsciously seeking—a way to move beyond empirical screening toward strict deciphering.
+          The true catalyst for my academic transition occurred during the <strong>2024 Gordon Research Conference (GRC) on Electrochemistry</strong>. Interacting with frontier research and the rigorous foundations of the science itself, I was exposed to the stark limitations of conventional models. I realized that merely evaluating half-cell reactions or reporting catalytic trends was insufficient; the real challenge in modern energy conversion devices lies in identifying exactly <strong>what we observe</strong> and how those <strong>measured quantities</strong> can be mapped as <strong>separable variables</strong> within a rigorous theoretical framework. This was the fundamental shift I internalized upon joining <strong>Prof. Stephen Dongmin Kang's lab</strong>; his framework provided the exact physicochemical rigor I had been subconsciously seeking—a way to move beyond empirical screening toward strict deciphering.
         </p>
 
         <p>
@@ -61,7 +63,7 @@ export default function AcademicTransitionPost() {
           </p>
 
           <div className="bg-white border border-dashed border-slate-300 rounded-xl p-6 text-sm font-sans text-slate-500">
-            <p><strong>[Coming Up in April]</strong>: Unraveling the fundamental distinctions between <em>Electrocatalysis</em> and <em>Battery Science</em>—Why the same charge transfer rules lead to different thermodynamic realities.</p>
+            <p><strong>[Update]</strong>: My new essay on <em>Chemical Capacitance</em> and the divide between Electrocatalysis and Battery Science is now available. <Link href="/posts/chemical-capacitance" className="text-[#FF6C0C] hover:underline font-bold">Read it here.</Link></p>
           </div>
         </div>
 
