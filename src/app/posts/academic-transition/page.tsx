@@ -14,7 +14,7 @@ export default function AcademicTransitionPost() {
           <span className="text-slate-300">•</span>
           <span>Academic Essay</span>
           <span className="text-slate-300">•</span>
-          <span className="text-slate-500 font-medium">April 29, 2026</span>
+          <span className="text-slate-500 font-medium">March 15, 2026</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
           The Turning Point:<br/> From Catalysis to Fundamental Thermodynamics
