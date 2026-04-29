@@ -58,7 +58,7 @@ export default function Research() {
               <p className="text-slate-600 text-sm leading-relaxed px-2 flex-grow">
                 Discover why I shifted my focus from surface-level synthetic evaluations towards rigorous thermodynamic and physicochemical frameworks of real energy systems.
               </p>
-              <div className="text-xs font-bold text-slate-400 mt-auto">April 29, 2026</div>
+              <div className="text-xs font-bold text-slate-400 mt-auto">March 15, 2026</div>
               <Link 
                 href="/posts/academic-transition" 
                 className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#A31F34] focus-visible:outline-none focus-visible:ring-2 hover:scale-105 w-full"
