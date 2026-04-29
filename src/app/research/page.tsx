@@ -70,7 +70,7 @@ export default function Research() {
             {/* Card 2 */}
             <div className="bg-white px-8 py-8 rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center gap-5 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(163,31,52,0.15)] hover:border-[#A31F34]">
               <span className="bg-[#A31F34]/15 text-[#A31F34] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest">Core Philosophy</span>
-              <h3 className="text-2xl font-extrabold text-slate-900">Catalysis vs Batteries</h3>
+              <h3 className="text-2xl font-extrabold text-slate-900">Catalysis vs. Batteries</h3>
               <p className="text-slate-600 text-sm leading-relaxed px-2 flex-grow">
                 Unraveling the fundamental distinctions between Electrocatalysis and Battery Science through the lens of Chemical Capacitance.
               </p>

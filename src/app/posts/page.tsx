@@ -3,6 +3,12 @@ import Link from 'next/link';
 export default function BlogIndex() {
   const posts = [
     {
+      title: "Product Leaves, Product Stays: Chemical Capacitance",
+      date: "April 2026",
+      excerpt: "Unraveling the fundamental distinctions between Electrocatalysis and Battery Science through the lens of Chemical Capacitance.",
+      slug: "chemical-capacitance"
+    },
+    {
       title: "The Turning Point: From Catalysis to Fundamental Thermodynamics",
       date: "March 2026",
       excerpt: "Reflections on the limitations of macroscopic screening and my deliberate pivot towards fundamental electrochemical and physical frameworks.",
