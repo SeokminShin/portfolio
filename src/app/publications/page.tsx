@@ -1,6 +1,12 @@
 export default function Publications() {
   const pubs = [
     {
+      year: "2026",
+      items: [
+        { title: "Charge-Transfer Kinetics of Intercalation Reactions: A Measurement Challenge", journal: "ACS Energy Lett.", authors: "Y. Choi, H. Kweon, Seokmin Shin, S. D. Kang", link: "https://doi.org/10.1021/acsenergylett.6c01178" }
+      ]
+    },
+    {
       year: "2024",
       items: [
         { title: "Advancements in electrochemical methanol synthesis from CO2: Mechanisms and catalyst developments", journal: "Nano Energy", authors: "H. Lee, ..., Seokmin Shin, et al.", link: "https://doi.org/10.1016/j.nanoen.2024.110099" },
