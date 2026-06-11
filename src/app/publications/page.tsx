@@ -9,16 +9,16 @@ export default function Publications() {
     {
       year: "2024",
       items: [
-        { title: "Advancements in electrochemical methanol synthesis from CO2: Mechanisms and catalyst developments", journal: "Nano Energy", authors: "H. Lee, ..., Seokmin Shin, et al.", link: "https://doi.org/10.1016/j.nanoen.2024.110099" },
-        { title: "Directions of Oxygen Evolution Reaction Electrocatalyst Evaluation for Anion Exchange Membrane CO2 Electrolyzer", journal: "EES Catal.", authors: "S. Kwon, ..., Seokmin Shin, et al.", link: "https://doi.org/10.1039/D3CY01633D" }
+        { title: "Advancements in electrochemical methanol synthesis from CO2: Mechanisms and catalyst developments", journal: "Nano Energy", authors: "Hojeong Lee, Namgyoo Park, Tae-Hoon Kong, Seontaek Kwon, Seokmin Shin, Sun Gwan Cha, Eunyoung Lee, Jihoo Cha, Siraj Sultan, Youngkook Kwon", link: "https://doi.org/10.1016/j.nanoen.2024.110099" },
+        { title: "Directions of Oxygen Evolution Reaction Electrocatalyst Evaluation for Anion Exchange Membrane CO2 Electrolyzer", journal: "EES Catal.", authors: "Seontaek Kwon, Tae-Hoon Kong, Namgyoo Park, Pandiarajan Thangavel, Hojeong Lee, Seokmin Shin, Jihoo Cha, Youngkook Kwon", link: "https://doi.org/10.1039/D3CY01633D" }
       ]
     },
     {
       year: "2023",
       items: [
-        { title: "Copper With an Atomic-scale Spacing for Efficient Electrocatalytic Co-reduction of Carbon Dioxide and Nitrate to Urea", journal: "Energy Environ. Sci.", authors: "Seokmin Shin, et al.", link: "https://doi.org/10.1039/D3EE00008G" },
-        { title: "Selectively Enhanced Electrocatalytic Oxygen Evolution within Nanoscopic Channels Fitting a Specific Reaction Intermediate for Seawater Splitting", journal: "Small", authors: "Seokmin Shin, et al.", link: "https://doi.org/10.1002/smll.202206918" },
-        { title: "In-situ Ionomer-free Catalyst Coated Membranes for Anion Exchange Membrane Water Electrolyzers", journal: "ACS Energy Lett.", authors: "T.-H. Kong, ..., Seokmin Shin, et al.", link: "https://doi.org/10.1021/acsenergylett.3c01418" }
+        { title: "Copper With an Atomic-scale Spacing for Efficient Electrocatalytic Co-reduction of Carbon Dioxide and Nitrate to Urea", journal: "Energy Environ. Sci.", authors: "Seokmin Shin, Siraj Sultan, Zong-Xian Chen, Hojeong Lee, Hansaem Choi, Tae-Ung Wi, Changhyun Park, Tae Won Kim, Chanhee Lee, Jihong Jeong, Hyeju Shin, Tae-Hee Kim, HyungKuk Ju, Hyung-Chul Yoon, Hyun-Kon Song, Hyun-Wook Lee, Minjun Cheng, Youngkook Kwon", link: "https://doi.org/10.1039/D3EE00008G" },
+        { title: "Selectively Enhanced Electrocatalytic Oxygen Evolution within Nanoscopic Channels Fitting a Specific Reaction Intermediate for Seawater Splitting", journal: "Small", authors: "Seokmin Shin, Tae-Ung Wi, Tae-Hoon Kong, Chanhyun Park, Hojeong Lee, Jihong Jeong, Eunryeol Lee, Subhin Yoon, Tae-Hee Kim, Hyun-Wook Lee, Youngkook Kwon, Hyun-Kon Song", link: "https://doi.org/10.1002/smll.202206918" },
+        { title: "In-situ Ionomer-free Catalyst Coated Membranes for Anion Exchange Membrane Water Electrolyzers", journal: "ACS Energy Lett.", authors: "Tae-Hoon Kong, Pandiarajan Thangavel, Seokmin Shin, Seontaek Kwon, Hyung-Kyu Choi, Hojeong Lee, Nam-Joon Park, Jin-Joo Woo, Youngkook Kwon", link: "https://doi.org/10.1021/acsenergylett.3c01418" }
       ]
     },
     {
@@ -30,6 +30,24 @@ export default function Publications() {
       ]
     }
   ];
+
+  const renderAuthors = (authorsStr: string) => {
+    const parts = authorsStr.split("Seokmin Shin");
+    if (parts.length === 1) return <>{authorsStr}</>;
+    
+    return (
+      <>
+        {parts.map((part, index) => (
+          <span key={index}>
+            {part}
+            {index < parts.length - 1 && (
+              <span className="font-extrabold text-[#A31F34]">Seokmin Shin</span>
+            )}
+          </span>
+        ))}
+      </>
+    );
+  };
 
   return (
     <div className="flex flex-col gap-12 animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -54,8 +72,8 @@ export default function Publications() {
               {group.items.map((pub, pIdx) => (
                 <a key={pIdx} href={pub.link} target="_blank" rel="noopener noreferrer" className="block group p-6 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-lg hover:-translate-y-1 hover:border-[#FF6C0C] transition-all">
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#A31F34] transition-colors leading-snug">{pub.title}</h3>
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3 mt-3 text-slate-600">
-                    <span className="font-semibold text-slate-800">{pub.authors}</span>
+                  <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mt-3 text-slate-600">
+                    <span className="font-medium text-slate-800">{renderAuthors(pub.authors)}</span>
                     <span className="hidden sm:inline text-slate-300">•</span>
                     <span className="italic font-medium text-[#FF6C0C]">{pub.journal}</span>
                   </div>
