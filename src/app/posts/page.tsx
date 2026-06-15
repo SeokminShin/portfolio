@@ -1,27 +1,7 @@
 import Link from 'next/link';
+import { posts } from '@/data/posts';
 
 export default function BlogIndex() {
-  const posts = [
-    {
-      title: "The Measurement Challenge: Decoupling Intercalation Kinetics",
-      date: "June 2026",
-      excerpt: "Reflecting on our viewpoint paper in ACS Energy Letters and exploring why redox-potential shifts render transient kinetics measurements model-dependent.",
-      slug: "measurement-challenge"
-    },
-    {
-      title: "Product Leaves, Product Stays: Chemical Capacitance",
-      date: "April 2026",
-      excerpt: "Unraveling the fundamental distinctions between Electrocatalysis and Battery Science through the lens of Chemical Capacitance.",
-      slug: "chemical-capacitance"
-    },
-    {
-      title: "The Turning Point: From Catalysis to Fundamental Thermodynamics",
-      date: "March 2026",
-      excerpt: "Reflections on the limitations of macroscopic screening and my deliberate pivot towards fundamental electrochemical and physical frameworks.",
-      slug: "academic-transition"
-    }
-  ];
-
   return (
     <div className="flex flex-col gap-12 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-20">
       <header className="flex flex-col gap-4 border-b-2 border-slate-100 pb-6">

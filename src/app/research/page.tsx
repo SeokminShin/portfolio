@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { posts } from '@/data/posts';
 
 export default function Research() {
   return (
@@ -50,38 +51,38 @@ export default function Research() {
           <div className="w-full border-t-4 border-dashed border-slate-200"></div>
         </div>
         <div className="relative flex justify-center w-full">
-          <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl">
-            {/* Card 1 */}
-            <div className="bg-white px-8 py-8 rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center gap-5 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,108,12,0.15)] hover:border-[#FF6C0C]">
-              <span className="bg-[#FF6C0C]/15 text-[#FF6C0C] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest">The Turning Point</span>
-              <h3 className="text-2xl font-extrabold text-slate-900">My Academic Transition</h3>
-              <p className="text-slate-600 text-sm leading-relaxed px-2 flex-grow">
-                Discover why I shifted my focus from surface-level synthetic evaluations towards rigorous thermodynamic and physicochemical frameworks of real energy systems.
-              </p>
-              <div className="text-xs font-bold text-slate-400 mt-auto">March 15, 2026</div>
-              <Link 
-                href="/posts/academic-transition" 
-                className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#A31F34] focus-visible:outline-none focus-visible:ring-2 hover:scale-105 w-full"
+          <div className="grid md:grid-cols-3 gap-6 w-full max-w-5xl">
+            {posts.map((post) => (
+              <div 
+                key={post.slug} 
+                className={`bg-white px-6 py-8 rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center gap-5 text-center transform transition duration-500 hover:-translate-y-2 ${
+                  post.themeColor === 'amber' 
+                    ? 'hover:shadow-[0_20px_40px_rgba(255,108,12,0.15)] hover:border-[#FF6C0C]' 
+                    : 'hover:shadow-[0_20px_40px_rgba(163,31,52,0.15)] hover:border-[#A31F34]'
+                }`}
               >
-                Read the full essay &rarr;
-              </Link>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white px-8 py-8 rounded-2xl border border-slate-200 shadow-[0_8px_30px_rgb(0,0,0,0.08)] flex flex-col items-center gap-5 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(163,31,52,0.15)] hover:border-[#A31F34]">
-              <span className="bg-[#A31F34]/15 text-[#A31F34] px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest">Core Philosophy</span>
-              <h3 className="text-2xl font-extrabold text-slate-900">Catalysis vs. Batteries</h3>
-              <p className="text-slate-600 text-sm leading-relaxed px-2 flex-grow">
-                Unraveling the fundamental distinctions between Electrocatalysis and Battery Science through the lens of Chemical Capacitance.
-              </p>
-              <div className="text-xs font-bold text-slate-400 mt-auto">April 29, 2026</div>
-              <Link 
-                href="/posts/chemical-capacitance" 
-                className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#A31F34] focus-visible:outline-none focus-visible:ring-2 hover:scale-105 w-full"
-              >
-                Read the full essay &rarr;
-              </Link>
-            </div>
+                <span className={`px-4 py-1.5 rounded-full text-xs font-extrabold uppercase tracking-widest ${
+                  post.themeColor === 'amber'
+                    ? 'bg-[#FF6C0C]/15 text-[#FF6C0C]'
+                    : 'bg-[#A31F34]/15 text-[#A31F34]'
+                }`}>
+                  {post.category}
+                </span>
+                <h3 className="text-xl font-extrabold text-slate-900 leading-snug">
+                  {post.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed px-2 flex-grow">
+                  {post.excerpt}
+                </p>
+                <div className="text-xs font-bold text-slate-400 mt-auto">{post.date}</div>
+                <Link 
+                  href={`/posts/${post.slug}`}
+                  className="mt-2 inline-flex h-12 items-center justify-center rounded-xl bg-slate-900 px-8 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#A31F34] focus-visible:outline-none focus-visible:ring-2 hover:scale-105 w-full"
+                >
+                  Read the full essay &rarr;
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>
