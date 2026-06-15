@@ -3,6 +3,12 @@ import Link from 'next/link';
 export default function BlogIndex() {
   const posts = [
     {
+      title: "The Measurement Challenge: Decoupling Intercalation Kinetics",
+      date: "June 2026",
+      excerpt: "Reflecting on our viewpoint paper in ACS Energy Letters and exploring why redox-potential shifts render transient kinetics measurements model-dependent.",
+      slug: "measurement-challenge"
+    },
+    {
       title: "Product Leaves, Product Stays: Chemical Capacitance",
       date: "April 2026",
       excerpt: "Unraveling the fundamental distinctions between Electrocatalysis and Battery Science through the lens of Chemical Capacitance.",

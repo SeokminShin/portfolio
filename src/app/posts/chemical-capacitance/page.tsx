@@ -123,6 +123,20 @@ export default function ChemicalCapacitancePost() {
         <p className="mb-8 p-6 bg-slate-100 italic rounded-xl text-slate-700">
           This is the conceptual space I want to keep exploring. Not just better battery materials, and not just better kinetic models, but a clearer connection between what we measure and what the material is actually doing. This naturally leads to the next question: if the material remembers every charge-transfer event as a language of chemical potential, how can we measure the charge-transfer event itself?
         </p>
+
+        {/* Link to the next post */}
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 mt-12">
+          <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2 font-sans">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF6C0C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            Next Post: Deciphering the Challenge
+          </h3>
+          <p className="text-slate-600 mb-4 text-sm font-sans">
+            Read my follow-up essay on why traditional battery kinetics measurements fail and how we might redefine the measurement methodology.
+          </p>
+          <Link href="/posts/measurement-challenge" className="text-[#A31F34] hover:text-[#FF6C0C] font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all font-sans">
+            Read "The Measurement Challenge" &rarr;
+          </Link>
+        </div>
       </div>
     </article>
   );
