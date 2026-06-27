@@ -1,41 +1,23 @@
-'use client';
-
 import Link from 'next/link';
 import Script from 'next/script';
-import { useEffect } from 'react';
 
 export default function PotentialWeDoNotMeasurePost() {
-  // Force MathJax to process formulas after client-side mount/hydration
-  useEffect(() => {
-    if (typeof window !== 'undefined' && (window as any).MathJax && (window as any).MathJax.typesetPromise) {
-      (window as any).MathJax.typesetPromise();
-    }
-  }, []);
-
   return (
     <article className="max-w-3xl mx-auto flex flex-col gap-6 py-10 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-20">
       {/* MathJax Configurations & Load */}
-      <Script id="mathjax-config" strategy="afterInteractive">
+      <Script id="mathjax-config" strategy="beforeInteractive">
         {`
           window.MathJax = {
             tex: {
-              inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
+              inlineMath: [['\\\\(', '\\\\)']],
               displayMath: [['$$', '$$'], ['\\\\[', \\\\]']]
-            },
-            options: {
-              skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
             }
           };
         `}
       </Script>
       <Script 
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
-        strategy="afterInteractive"
-        onLoad={() => {
-          if ((window as any).MathJax && (window as any).MathJax.typesetPromise) {
-            (window as any).MathJax.typesetPromise();
-          }
-        }}
+        strategy="lazyOnload" 
       />
 
       {/* Header */}
@@ -73,7 +55,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          A voltmeter displays a voltage. A pH meter gives a relative potential reading. A battery has an open-circuit voltage. An electrochemical double layer exhibits a potential drop. A Pourbaix diagram is drawn on an axis labeled {"$E$ vs pH"}.
+          A voltmeter displays a voltage. A pH meter gives a relative potential reading. A battery has an open-circuit voltage. An electrochemical double layer exhibits a potential drop. A Pourbaix diagram is drawn on an axis labeled {"\\(E\\) vs pH"}.
         </p>
 
         <p className="mb-6">
@@ -101,21 +83,21 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          Thus, the principle cannot simply mean that voltage is unreal. Rather, it says something more subtle: <span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-2 py-0.5 rounded">the measurable voltage is not the same thing as a pure electrical potential difference, $\Delta \phi$, between two chemically different regions.</span>
+          Thus, the principle cannot simply mean that voltage is unreal. Rather, it says something more subtle: <span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-2 py-0.5 rounded">the measurable voltage is not the same thing as a pure electrical potential difference, {"\\(\\Delta \\phi\\)"}, between two chemically different regions.</span>
         </p>
 
         <p className="mb-6">
           This distinction is the conceptual doorway.
         </p>
 
-        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"Voltage is Not Simply $\Delta \phi$"}</h3>
+        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"Voltage is Not Simply \\(\\Delta \\phi\\)"}</h3>
 
         <p className="mb-6">
           A useful starting point is a key concept I learned from my study under Professor Kang: that while electrochemistry often uses "potential" and "voltage" interchangeably, the measured voltage in an experiment corresponds to an electrochemical potential difference of electrons, not directly to an electrical potential difference.
         </p>
 
         <p className="mb-6">
-          For a charged species {"$i$"}, the electrochemical potential is defined as:
+          For a charged species {"\\(i\\)"}, the electrochemical potential is defined as:
         </p>
 
         <div className="my-8 overflow-x-auto text-center bg-slate-50/50 py-4 rounded-xl border border-slate-100">
@@ -123,11 +105,11 @@ export default function PotentialWeDoNotMeasurePost() {
         </div>
 
         <p className="mb-6">
-          where {"$\\tilde{\\mu}_i$"} is the electrochemical potential, {"$\\mu_i$"} is the chemical potential, and {"$z_i F \\phi$"} is the electrical contribution.
+          where {"\\(\\tilde{\\mu}_i\\)"} is the electrochemical potential, {"\\(\\mu_i\\)"} is the chemical potential, and {"\\(z_i F \\phi\\)"} is the electrical contribution.
         </p>
 
         <p className="mb-6">
-          This equation is so familiar that it can become misleading. It appears to state that the total driving force naturally decomposes into a chemical term and an electrical term. But thermodynamically, we only have physical access to the total electrochemical potential, or differences in it. The partition into {"$\\mu_i$"} and {"$z_i F \\phi$"} is not, by itself, a direct measurement.
+          This equation is so familiar that it can become misleading. It appears to state that the total driving force naturally decomposes into a chemical term and an electrical term. But thermodynamically, we only have physical access to the total electrochemical potential, or differences in it. The partition into {"\\(\\mu_i\\)"} and {"\\(z_i F \\phi\\)"} is not, by itself, a direct measurement.
         </p>
 
         <p className="mb-6">
@@ -139,11 +121,11 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          Why? Because the voltmeter does not measure the internal {"$\\Delta \\phi$"} as an isolated electrostatic quantity. It measures the remaining driving force for electrons ({"$-\\Delta \\tilde{\\mu}_{e^-}/F$"}). Once the electrons are equilibrated, that driving force is zero.
+          Why? Because the voltmeter does not measure the internal {"\\(\\Delta \\phi\\)"} as an isolated electrostatic quantity. It measures the remaining driving force for electrons ({"\\(-\\Delta \\tilde{\\mu}_{e^-}/F\\)"}). Once the electrons are equilibrated, that driving force is zero.
         </p>
 
         <p className="mb-6">
-          This example breaks a common intuition. An electrical potential difference may be part of a model describing the system, but the measurable voltage is the electron electrochemical potential difference normalized by charge. A voltmeter does not insert a magical probe into matter to read out the scalar field {"$\\phi$"}. It asks a thermodynamic question: <em>is there a driving force for electrons to move through the external circuit?</em>
+          This example breaks a common intuition. An electrical potential difference may be part of a model describing the system, but the measurable voltage is the electron electrochemical potential difference normalized by charge. A voltmeter does not insert a magical probe into matter to read out the scalar field {"\\(\\phi\\)"}. It asks a thermodynamic question: <em>is there a driving force for electrons to move through the external circuit?</em>
         </p>
 
         <p className="mb-6">
@@ -165,7 +147,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          The ion does not ask: <em>{"\"What is $\\phi$ here?\""}</em> It responds to its total electrochemical environment.
+          The ion does not ask: <em>{"\"What is \\(\\phi\\) here?\""}</em> It responds to its total electrochemical environment.
         </p>
 
         <p className="mb-6">
@@ -179,7 +161,7 @@ export default function PotentialWeDoNotMeasurePost() {
         <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"Why This Matters for Electrochemical Models"}</h3>
 
         <p className="mb-6">
-          This does not mean that {"$\\phi$"} is useless. Quite the opposite. The electrical potential is a powerful conceptual tool. We introduce {"$\\phi$"} because it allows us to use electrostatic reasoning, especially for long-range interactions. Once {"$\\phi$"} is introduced, we can connect charge density to potential through Poisson’s equation, describe space charge regions, model double layers, and interpret the redistribution of charged species.
+          This does not mean that {"\\(\\phi\\)"} is useless. Quite the opposite. The electrical potential is a powerful conceptual tool. We introduce {"\\(\\phi\\)"} because it allows us to use electrostatic reasoning, especially for long-range interactions. Once {"\\(\\phi\\)"} is introduced, we can connect charge density to potential through Poisson’s equation, describe space charge regions, model double layers, and interpret the redistribution of charged species.
         </p>
 
         <p className="mb-6">
@@ -217,7 +199,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          This concept becomes clearer when we look at the origin of a battery's electromotive force. The emf of a battery does not originate from a pure electrical potential difference. It originates from non-electrostatic sources, especially chemical potential differences of neutral species. For a lithium cell, the open-circuit voltage can be written in terms of the chemical potential difference of neutral lithium in the two electrode environments, rather than as a direct measurement of the electrical potential of {"$\\text{Li}^+$"}.
+          This concept becomes clearer when we look at the origin of a battery's electromotive force. The emf of a battery does not originate from a pure electrical potential difference. It originates from non-electrostatic sources, especially chemical potential differences of neutral species. For a lithium cell, the open-circuit voltage can be written in terms of the chemical potential difference of neutral lithium in the two electrode environments, rather than as a direct measurement of the electrical potential of {"\\(\\text{Li}^+\\)"}.
         </p>
 
         <p className="mb-6">
@@ -229,7 +211,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          The Gibbs–Guggenheim principle helps refine this statement. The voltage is not a direct reading of {"$\\Delta \\phi$"}. It is the experimentally accessible shadow of a full thermodynamic circuit. Electrons in the external wire, ions in the electrolyte, neutral species in the electrodes, reference conventions, interfacial equilibria, and chemical potentials all participate in making the measured number possible. The voltmeter gives a clean number, but the meaning of that number is not clean unless we specify the thermodynamic path by which it is read.
+          The Gibbs–Guggenheim principle helps refine this statement. The voltage is not a direct reading of {"\\(\\Delta \\phi\\)"}. It is the experimentally accessible shadow of a full thermodynamic circuit. Electrons in the external wire, ions in the electrolyte, neutral species in the electrodes, reference conventions, interfacial equilibria, and chemical potentials all participate in making the measured number possible. The voltmeter gives a clean number, but the meaning of that number is not clean unless we specify the thermodynamic path by which it is read.
         </p>
 
         <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"What the Principle Does, and Does Not, Say"}</h3>
@@ -239,7 +221,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          The principle says something more disciplined: <span className="font-semibold text-slate-900 border-b-2 border-[#FF6C0C]/40 pb-0.5">Use $\phi$, but do not forget what kind of object it is.</span>
+          The principle says something more disciplined: <span className="font-semibold text-slate-900 border-b-2 border-[#FF6C0C]/40 pb-0.5">Use {"\\(\\phi\\)"}, but do not forget what kind of object it is.</span>
         </p>
 
         <p className="mb-6">
