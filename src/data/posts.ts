@@ -9,6 +9,14 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    title: "The Potential We Do Not Measure",
+    date: "June 27, 2026",
+    excerpt: "Rethinking electrochemical voltage through the Gibbs–Guggenheim principle and discovering why a voltmeter measures thermodynamics, not electrostatic potentials.",
+    slug: "potential-we-do-not-measure",
+    category: "Core Philosophy",
+    themeColor: "crimson"
+  },
+  {
     title: "The Measurement Challenge: Decoupling Intercalation Kinetics",
     date: "June 15, 2026",
     excerpt: "Reflecting on our viewpoint paper in ACS Energy Letters and exploring why redox-potential shifts render transient kinetics measurements model-dependent.",
