@@ -1,23 +1,41 @@
+'use client';
+
 import Link from 'next/link';
 import Script from 'next/script';
+import { useEffect } from 'react';
 
 export default function PotentialWeDoNotMeasurePost() {
+  // Force MathJax to process formulas after client-side mount/hydration
+  useEffect(() => {
+    if (typeof window !== 'undefined' && (window as any).MathJax && (window as any).MathJax.typesetPromise) {
+      (window as any).MathJax.typesetPromise();
+    }
+  }, []);
+
   return (
     <article className="max-w-3xl mx-auto flex flex-col gap-6 py-10 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-20">
       {/* MathJax Configurations & Load */}
-      <Script id="mathjax-config" strategy="beforeInteractive">
+      <Script id="mathjax-config" strategy="afterInteractive">
         {`
           window.MathJax = {
             tex: {
               inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
               displayMath: [['$$', '$$'], ['\\\\[', \\\\]']]
+            },
+            options: {
+              skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
             }
           };
         `}
       </Script>
       <Script 
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
-        strategy="lazyOnload" 
+        strategy="afterInteractive"
+        onLoad={() => {
+          if ((window as any).MathJax && (window as any).MathJax.typesetPromise) {
+            (window as any).MathJax.typesetPromise();
+          }
+        }}
       />
 
       {/* Header */}
@@ -35,7 +53,7 @@ export default function PotentialWeDoNotMeasurePost() {
         <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
           The Potential We Do Not Measure
         </h1>
-        <p className="text-lg text-slate-500 font-medium">
+        <p className="text-lg text-slate-500 font-medium font-sans">
           Rethinking electrochemical voltage through the Gibbs–Guggenheim principle and discovering why a voltmeter measures thermodynamics, not electrostatic potentials.
         </p>
       </header>
@@ -43,9 +61,10 @@ export default function PotentialWeDoNotMeasurePost() {
       {/* Main Content */}
       <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-serif">
         
+        {/* Dedication block with styled highlight for Prof. Kang */}
         <div className="bg-[#A31F34]/5 border-l-[6px] border-[#A31F34] p-8 my-10 rounded-r-xl shadow-inner not-prose">
           <p className="m-0 font-medium text-slate-900 text-lg italic leading-relaxed">
-            "Before diving into this essay, I would like to express my deepest gratitude to Professor Stephen Dongmin Kang. To me, who merely assumed I "knew" electrochemistry, he taught the profound importance of "knowing precisely"—a lesson that inspired this writing."
+            "Before diving into this essay, I would like to express my deepest gratitude to <span className="text-[#A31F34] font-bold not-italic">Professor Stephen Dongmin Kang</span>. To me, who merely assumed I "knew" electrochemistry, he taught the profound importance of "knowing precisely"—a lesson that inspired this writing."
           </p>
         </div>
 
@@ -82,14 +101,14 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          Thus, the principle cannot simply mean that voltage is unreal. Rather, it says something more subtle: <strong>{"the measurable voltage is not the same thing as a pure electrical potential difference, $\\Delta \\phi$, between two chemically different regions."}</strong>
+          Thus, the principle cannot simply mean that voltage is unreal. Rather, it says something more subtle: <span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-2 py-0.5 rounded">the measurable voltage is not the same thing as a pure electrical potential difference, $\Delta \phi$, between two chemically different regions.</span>
         </p>
 
         <p className="mb-6">
           This distinction is the conceptual doorway.
         </p>
 
-        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"Voltage is Not Simply $\\Delta \\phi$"}</h3>
+        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"Voltage is Not Simply $\Delta \phi$"}</h3>
 
         <p className="mb-6">
           A useful starting point is a key concept I learned from my study under Professor Kang: that while electrochemistry often uses "potential" and "voltage" interchangeably, the measured voltage in an experiment corresponds to an electrochemical potential difference of electrons, not directly to an electrical potential difference.
@@ -99,7 +118,7 @@ export default function PotentialWeDoNotMeasurePost() {
           For a charged species {"$i$"}, the electrochemical potential is defined as:
         </p>
 
-        <div className="my-6 overflow-x-auto text-center">
+        <div className="my-8 overflow-x-auto text-center bg-slate-50/50 py-4 rounded-xl border border-slate-100">
           {"$$ \\tilde{\\mu}_i = \\mu_i + z_i F \\phi $$"}
         </div>
 
@@ -206,7 +225,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          This connects naturally to the concept of chemical capacitance. In intercalation materials, the product of the electrochemical reaction stays inside the host. Every charge-transfer event changes the state of the material, and that state change shifts the chemical potential landscape for the next event. In that sense, battery voltage is not just an electrical number. It is a compressed thermodynamic message from the material.
+          This connects naturally to the concept of chemical capacitance. In intercalation materials, the product of the electrochemical reaction stays inside the host. Every charge-transfer event changes the state of the material, and that state change shifts the chemical potential landscape for the next event. In that sense, battery voltage is not just an electrical number. It is a <span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-1.5 py-0.5 rounded">compressed thermodynamic message</span> from the material.
         </p>
 
         <p className="mb-6">
@@ -220,7 +239,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          The principle says something more disciplined: <strong>{"Use $\\phi$, but do not forget what kind of object it is."}</strong>
+          The principle says something more disciplined: <span className="font-semibold text-slate-900 border-b-2 border-[#FF6C0C]/40 pb-0.5">Use $\phi$, but do not forget what kind of object it is.</span>
         </p>
 
         <p className="mb-6">
