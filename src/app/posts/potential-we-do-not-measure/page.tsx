@@ -10,7 +10,7 @@ export default function PotentialWeDoNotMeasurePost() {
           window.MathJax = {
             tex: {
               inlineMath: [['\\\\(', '\\\\)']],
-              displayMath: [['$$', '$$'], ['\\\\[', \\\\]']]
+              displayMath: [['$$', '$$']]
             }
           };
         `}
@@ -46,7 +46,7 @@ export default function PotentialWeDoNotMeasurePost() {
         {/* Dedication block with styled highlight for Prof. Kang */}
         <div className="bg-[#A31F34]/5 border-l-[6px] border-[#A31F34] p-8 my-10 rounded-r-xl shadow-inner not-prose">
           <p className="m-0 font-medium text-slate-900 text-lg italic leading-relaxed">
-            "Before diving into this essay, I would like to express my deepest gratitude to <span className="text-[#A31F34] font-bold not-italic">Professor Stephen Dongmin Kang</span>. To me, who merely assumed I "knew" electrochemistry, he taught the profound importance of "knowing precisely"—a lesson that inspired this writing."
+            "Before diving into this essay, I would like to express my deepest gratitude to <span className="text-[#A31F34] font-bold not-italic">Professor Stephen Dongmin Kang</span>. To me, who assumed I "know" electrochemistry, he taught the profound importance of "knowing precisely"—a lesson that inspired this writing."
           </p>
         </div>
 
