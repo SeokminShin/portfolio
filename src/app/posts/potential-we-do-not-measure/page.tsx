@@ -110,14 +110,6 @@ export default function PotentialWeDoNotMeasurePost() {
           When connected electrically, electrons flow until Fermi levels equilibrate. This creates a real electrostatic potential difference ({"\\(\\Delta \\phi\\)"}) at the contact interface. Yet if you connect a voltmeter across this contact, the reading is exactly zero.
         </p>
 
-        <pre className="bg-slate-50 border border-slate-100 rounded-xl p-4 my-6 font-mono text-xs sm:text-sm text-slate-600 overflow-x-auto leading-normal">
-{`[ Metal A ] <--- Contact Interface ---> [ Metal B ]
-              (Internal Δϕ is non-zero)
-                     |         |
-                     +--[ V ]--+
-                   (Reading = 0 V)`}
-        </pre>
-
         <p className="mb-6">
           Because a voltmeter does not read {"\\(\\phi\\)"}. It measures {"\\(-\\Delta \\tilde{\\mu}_{e^-}/F\\)"}—the difference in electrochemical potential of electrons between its terminals. At equilibrium, that driving force is gone ({"\\(\\Delta \\tilde{\\mu}_{e^-} = 0\\)"}). The reading is zero.
         </p>
