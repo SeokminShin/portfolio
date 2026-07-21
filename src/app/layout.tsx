@@ -6,7 +6,7 @@ import Link from 'next/link';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Seokmin Shin | Electrochemist",
+  title: "Seokmin Shin | Electrochemical Thermodynamics",
   description: "Portfolio and research highlights of Seokmin Shin.",
 };
 
