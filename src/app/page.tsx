@@ -149,7 +149,7 @@ export default function Home() {
                 <h3 className="font-bold text-slate-900">Curriculum Vitae - Seokmin Shin</h3>
               </div>
               <div className="flex items-center gap-4">
-                <a href="/portfolio/CV_SeokminShin.pdf" download className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-sm font-bold transition-colors">
+                <a href="/portfolio/CV_Seokmin_Shin.pdf" download className="hidden sm:flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-md text-sm font-bold transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                   Download
                 </a>
@@ -164,14 +164,14 @@ export default function Home() {
             {/* PDF Viewer */}
             <div className="flex-1 bg-slate-100 p-2 sm:p-6 overflow-auto">
               <iframe 
-                src="/portfolio/CV_SeokminShin.pdf#toolbar=0" 
+                src="/portfolio/CV_Seokmin_Shin.pdf#toolbar=0" 
                 className="w-full h-full rounded-md shadow-inner border border-slate-300 bg-white"
                 title="CV Preview"
               />
             </div>
             {/* Modal Footer (Mobile Download) */}
             <div className="sm:hidden p-4 border-t border-slate-200 bg-white">
-              <a href="/portfolio/CV_SeokminShin.pdf" download className="flex items-center justify-center gap-2 w-full py-3 bg-[#A31F34] text-white rounded-xl font-bold">
+              <a href="/portfolio/CV_Seokmin_Shin.pdf" download className="flex items-center justify-center gap-2 w-full py-3 bg-[#A31F34] text-white rounded-xl font-bold">
                 Download CV
               </a>
             </div>
