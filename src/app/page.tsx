@@ -105,18 +105,25 @@ export default function Home() {
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2">
-          <Link href="/posts/academic-transition" className="group p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#A31F34]">
-            <span className="text-xs font-bold text-[#A31F34] uppercase tracking-wider">Featured Essay</span>
-            <h3 className="text-xl font-bold text-slate-900 mt-2 mb-3 group-hover:text-[#A31F34] transition-colors">The Turning Point: From Catalysis to Fundamental Thermodynamics</h3>
+          <Link href="/posts/ph-convention-architecture" className="group p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#FF6C0C]">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-xs font-bold text-[#FF6C0C] uppercase tracking-wider">Latest Essay • July 31, 2026</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mt-1 mb-3 group-hover:text-[#FF6C0C] transition-colors">The Number We Agree to Trust: pH and the Architecture of Convention</h3>
             <p className="text-sm text-slate-600 leading-relaxed">
-              Reflections on the limitations of macroscopic screening and my deliberate pivot towards fundamental electrochemical and physical frameworks.
+              On individual ion activities, the Bates–Guggenheim convention, and why the questions we ask about battery kinetics might be arriving one step too early.
             </p>
           </Link>
           
-          <div className="flex flex-col justify-center p-8 rounded-2xl bg-[#A31F34]/5 border border-[#A31F34]/20 border-dashed">
-            <h3 className="font-bold text-slate-900 mb-2">Synthesis in Progress</h3>
-            <p className="text-sm text-slate-500 italic">"A dedicated space for emerging hypotheses, rigorous literature critiques, and evolving perspectives on the thermodynamic foundations of electrochemical energy systems."</p>
-          </div>
+          <Link href="/posts/potential-we-do-not-measure" className="group p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl transition-all duration-300 hover:border-[#A31F34]">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-xs font-bold text-[#A31F34] uppercase tracking-wider">Featured Essay • June 27, 2026</span>
+            </div>
+            <h3 className="text-xl font-bold text-slate-900 mt-1 mb-3 group-hover:text-[#A31F34] transition-colors">The Potential We Do Not Measure</h3>
+            <p className="text-sm text-slate-600 leading-relaxed">
+              Rethinking electrochemical voltage through the Gibbs–Guggenheim principle and discovering why a voltmeter measures thermodynamics, not electrostatic potentials.
+            </p>
+          </Link>
         </div>
       </section>
 
