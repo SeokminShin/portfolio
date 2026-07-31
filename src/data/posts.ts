@@ -9,6 +9,14 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    title: "The Number We Agree to Trust: pH and the Architecture of Convention",
+    date: "July 31, 2026",
+    excerpt: "On individual ion activities, the Bates–Guggenheim convention, chemical capacitance, and why the questions we ask about battery kinetics might be arriving one step too early.",
+    slug: "ph-convention-architecture",
+    category: "Core Philosophy",
+    themeColor: "amber"
+  },
+  {
     title: "The Potential We Do Not Measure",
     date: "June 27, 2026",
     excerpt: "Rethinking electrochemical voltage through the Gibbs–Guggenheim principle and discovering why a voltmeter measures thermodynamics, not electrostatic potentials.",
