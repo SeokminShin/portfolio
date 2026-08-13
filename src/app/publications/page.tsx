@@ -10,7 +10,7 @@ export default function Publications() {
       year: "2024",
       items: [
         { title: "Advancements in electrochemical methanol synthesis from CO2: Mechanisms and catalyst developments", journal: "Nano Energy", authors: "Hojeong Lee, Namgyoo Park, Tae-Hoon Kong, Seontaek Kwon, Seokmin Shin, Sun Gwan Cha, Eunyoung Lee, Jihoo Cha, Siraj Sultan, Youngkook Kwon", link: "https://doi.org/10.1016/j.nanoen.2024.110099" },
-        { title: "Directions of Oxygen Evolution Reaction Electrocatalyst Evaluation for Anion Exchange Membrane CO2 Electrolyzer", journal: "EES Catal.", authors: "Seontaek Kwon, Tae-Hoon Kong, Namgyoo Park, Pandiarajan Thangavel, Hojeong Lee, Seokmin Shin, Jihoo Cha, Youngkook Kwon", link: "https://doi.org/10.1039/D3CY01633D" }
+        { title: "Directions of Oxygen Evolution Reaction Electrocatalyst Evaluation for Anion Exchange Membrane CO2 Electrolyzer", journal: "EES Catal.", authors: "Seontaek Kwon, Tae-Hoon Kong, Namgyoo Park, Pandiarajan Thangavel, Hojeong Lee, Seokmin Shin, Jihoo Cha, Youngkook Kwon", link: "https://doi.org/10.1039/D3EY00314K" }
       ]
     },
     {
