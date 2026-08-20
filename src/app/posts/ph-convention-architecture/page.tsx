@@ -1,24 +1,9 @@
 import Link from 'next/link';
-import Script from 'next/script';
+import Math from '@/components/Math';
 
 export default function PhConventionArchitecturePost() {
   return (
     <article className="max-w-3xl mx-auto flex flex-col gap-6 py-10 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-20">
-      {/* MathJax Configurations & Load */}
-      <Script id="mathjax-config" strategy="beforeInteractive">
-        {`
-          window.MathJax = {
-            tex: {
-              inlineMath: [['\\\\(', '\\\\)']],
-              displayMath: [['$$', '$$']]
-            }
-          };
-        `}
-      </Script>
-      <Script 
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
-        strategy="lazyOnload" 
-      />
 
       {/* Header */}
       <header className="flex flex-col gap-4 border-b border-slate-200 pb-8 text-center sm:text-left">
@@ -49,7 +34,7 @@ export default function PhConventionArchitecturePost() {
         {/* Intro Connection Box */}
         <div className="bg-[#A31F34]/5 border-l-[6px] border-[#A31F34] p-6 my-6 rounded-r-xl shadow-inner not-prose">
           <p className="m-0 font-medium text-slate-900 text-base leading-relaxed italic">
-            &quot;At the end of my last essay, I left off with a question: If a voltmeter never really measures {"\\(\\phi\\)"}, if it only reports a difference in electrochemical potential, then what happens when we turn to a quantity that feels even more familiar than voltage—<strong>pH</strong>?&quot;
+            &quot;At the end of my last essay, I left off with a question: If a voltmeter never really measures <Math math="\phi" />, if it only reports a difference in electrochemical potential, then what happens when we turn to a quantity that feels even more familiar than voltage—<strong>pH</strong>?&quot;
           </p>
         </div>
 
@@ -58,7 +43,7 @@ export default function PhConventionArchitecturePost() {
         </p>
 
         <p className="mb-6">
-          But pH is not what it appears to be. Under the same Gibbs–Guggenheim reasoning that undid my confidence in {"\\(\\phi\\)"}, pH carries its own hidden fragility. I think working through it is the clearest way to see how a field builds a trustworthy number out of a quantity that is, strictly speaking, undefined.
+          But pH is not what it appears to be. Under the same Gibbs–Guggenheim reasoning that undid my confidence in <Math math="\phi" />, pH carries its own hidden fragility. I think working through it is the clearest way to see how a field builds a trustworthy number out of a quantity that is, strictly speaking, undefined.
         </p>
 
         <hr className="my-10 border-t border-slate-200" />
@@ -72,9 +57,7 @@ export default function PhConventionArchitecturePost() {
         </p>
 
         <div className="my-8 overflow-x-auto text-center bg-slate-50/50 py-5 rounded-xl border border-slate-200/80 shadow-sm font-sans">
-          <span className="text-xl font-semibold text-slate-900">
-            {"$$ \\text{pH} = -\\log_{10} a(\\text{H}^+) $$"}
-          </span>
+          <Math math="\text{pH} = -\log_{10} a(\text{H}^+)" block className="text-xl font-semibold text-slate-900" />
         </div>
 
         <p className="mb-6">
@@ -86,13 +69,11 @@ export default function PhConventionArchitecturePost() {
         </p>
 
         <p className="mb-6">
-          This is the same trap described in my previous essay regarding {"\\(\\phi\\)"}:
+          This is the same trap described in my previous essay regarding <Math math="\phi" />:
         </p>
 
         <div className="my-8 overflow-x-auto text-center bg-slate-50/50 py-5 rounded-xl border border-slate-200/80 shadow-sm font-sans">
-          <span className="text-xl font-semibold text-slate-900">
-            {"$$ \\tilde{\\mu}_i = \\mu_i + z_i F \\phi $$"}
-          </span>
+          <Math math="\tilde{\mu}_i = \mu_i + z_i F \phi" block className="text-xl font-semibold text-slate-900" />
         </div>
 
         <p className="mb-6">
@@ -116,7 +97,7 @@ export default function PhConventionArchitecturePost() {
         <div className="bg-[#FF6C0C]/5 border-l-[6px] border-[#FF6C0C] p-8 my-8 rounded-r-xl shadow-inner not-prose">
           <p className="m-0 font-medium text-slate-900 text-lg leading-relaxed">
             <span className="font-bold text-[#FF6C0C] uppercase tracking-wider block text-xs mb-1 font-sans">Key Insight</span>
-            This is exactly the move I was circling at the end of the last essay without naming it. {"\\(\\Delta \\tilde{\\mu}_{e^-}\\)"} is operational. It is not a claim about what {"\\(\\phi\\)"} truly is; it is a statement about what a specific measurement, under a specific protocol, reliably returns. pH is the same idea taken one step further. It is not a claim about the true state of a proton. It is a number that a specific cell, under a specific convention, reliably returns.
+            This is exactly the move I was circling at the end of the last essay without naming it. <Math math="\Delta \tilde{\mu}_{e^-}" /> is operational. It is not a claim about what <Math math="\phi" /> truly is; it is a statement about what a specific measurement, under a specific protocol, reliably returns. pH is the same idea taken one step further. It is not a claim about the true state of a proton. It is a number that a specific cell, under a specific convention, reliably returns.
           </p>
         </div>
 

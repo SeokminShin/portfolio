@@ -1,24 +1,9 @@
 import Link from 'next/link';
-import Script from 'next/script';
+import Math from '@/components/Math';
 
 export default function PotentialWeDoNotMeasurePost() {
   return (
     <article className="max-w-3xl mx-auto flex flex-col gap-6 py-10 animate-in fade-in slide-in-from-bottom-4 duration-700 pb-20">
-      {/* MathJax Configurations & Load */}
-      <Script id="mathjax-config" strategy="beforeInteractive">
-        {`
-          window.MathJax = {
-            tex: {
-              inlineMath: [['\\\\(', '\\\\)']],
-              displayMath: [['$$', '$$']]
-            }
-          };
-        `}
-      </Script>
-      <Script 
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
-        strategy="lazyOnload" 
-      />
 
       {/* Header */}
       <header className="flex flex-col gap-4 border-b border-slate-200 pb-8 text-center sm:text-left">
@@ -55,7 +40,7 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          A voltmeter displays a voltage. A pH meter gives a relative potential reading. A battery has an open-circuit voltage. An electrochemical double layer exhibits a potential drop. A Pourbaix diagram is drawn on an axis labeled {"\\(E\\) vs pH"}.
+          A voltmeter displays a voltage. A pH meter gives a relative potential reading. A battery has an open-circuit voltage. An electrochemical double layer exhibits a potential drop. A Pourbaix diagram is drawn on an axis labeled <Math math="E \text{ vs pH}" />.
         </p>
 
         <p className="mb-6">
@@ -76,42 +61,42 @@ export default function PotentialWeDoNotMeasurePost() {
 
         <hr className="my-10 border-t border-slate-200" />
 
-        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"The Thermodynamic Split: \\(\\tilde{\\mu}_i = \\mu_i + z_i F \\phi\\)"}</h3>
+        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">The Thermodynamic Split: <Math math="\tilde{\mu}_i = \mu_i + z_i F \phi" /></h3>
 
         <p className="mb-6">
           The principle, originally emphasized by J. Willard Gibbs and later made explicit by E. A. Guggenheim, states that the electrical potential difference between two phases of different chemical composition cannot be measured. The problem is not a limitation of our instruments, but a fundamental property of thermodynamics: the electrostatic potential difference is not a separate, measurable observable in condensed matter.
         </p>
 
         <p className="mb-6">
-          To see why, consider how electrochemistry defines the energy of a charged species. For a species {"\\(i\\)"} with charge {"\\(z_i\\)"}, the total work required to bring it into a phase is its electrochemical potential, {"\\(\\tilde{\\mu}_i\\)"}:
+          To see why, consider how electrochemistry defines the energy of a charged species. For a species <Math math="i" /> with charge <Math math="z_i" />, the total work required to bring it into a phase is its electrochemical potential, <Math math="\tilde{\mu}_i" />:
         </p>
 
         <div className="my-8 overflow-x-auto text-center bg-slate-50/50 py-4 rounded-xl border border-slate-100">
-          {"$$ \\tilde{\\mu}_i = \\mu_i + z_i F \\phi $$"}
+          <Math math="\tilde{\mu}_i = \mu_i + z_i F \phi" block className="text-xl font-semibold text-slate-900" />
         </div>
 
         <p className="mb-6">
-          Here, {"\\(\\mu_i\\)"} captures the non-electrostatic contributions—solvation, chemical bonds, entropy—while {"\\(z_i F \\phi\\)"} carries the electrostatic energy of the inner potential {"\\(\\phi\\)"}.
+          Here, <Math math="\mu_i" /> captures the non-electrostatic contributions—solvation, chemical bonds, entropy—while <Math math="z_i F \phi" /> carries the electrostatic energy of the inner potential <Math math="\phi" />.
         </p>
 
         <p className="mb-6">
-          The equation looks clean. But it introduces a trap. To actually measure {"\\(\\Delta \\phi\\)"} between two phases, you would need to transfer a charge without any of the chemical interactions changing—no solvation shift, no adsorption, no dispersion. That is not physically possible. An ion cannot be stripped of its chemical nature. The decomposition of {"\\(\\tilde{\\mu}_i\\)"} is a modeling choice, not a physical separation. <span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-2 py-0.5 rounded">The total is operational; the split is conceptual.</span>
+          The equation looks clean. But it introduces a trap. To actually measure <Math math="\Delta \phi" /> between two phases, you would need to transfer a charge without any of the chemical interactions changing—no solvation shift, no adsorption, no dispersion. That is not physically possible. An ion cannot be stripped of its chemical nature. The decomposition of <Math math="\tilde{\mu}_i" /> is a modeling choice, not a physical separation. <span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-2 py-0.5 rounded">The total is operational; the split is conceptual.</span>
         </p>
 
         <hr className="my-10 border-t border-slate-200" />
 
-        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"Voltage is Not \\(\\Delta \\phi\\): The Metal–Metal Contact"}</h3>
+        <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">Voltage is Not <Math math="\Delta \phi" />: The Metal–Metal Contact</h3>
 
         <p className="mb-6">
           A classic example makes this concrete. Imagine two different metals initially isolated. Because they have different Fermi levels, their electron chemical potentials differ.
         </p>
 
         <p className="mb-6">
-          When connected electrically, electrons flow until Fermi levels equilibrate. This creates a real electrostatic potential difference ({"\\(\\Delta \\phi\\)"}) at the contact interface. Yet if you connect a voltmeter across this contact, the reading is exactly zero.
+          When connected electrically, electrons flow until Fermi levels equilibrate. This creates a real electrostatic potential difference (<Math math="\Delta \phi" />) at the contact interface. Yet if you connect a voltmeter across this contact, the reading is exactly zero.
         </p>
 
         <p className="mb-6">
-          Because a voltmeter does not read {"\\(\\phi\\)"}. It measures {"\\(-\\Delta \\tilde{\\mu}_{e^-}/F\\)"}—the difference in electrochemical potential of electrons between its terminals. At equilibrium, that driving force is gone ({"\\(\\Delta \\tilde{\\mu}_{e^-} = 0\\)"}). The reading is zero.
+          Because a voltmeter does not read <Math math="\phi" />. It measures <Math math="-\Delta \tilde{\mu}_{e^-}/F" />—the difference in electrochemical potential of electrons between its terminals. At equilibrium, that driving force is gone (<Math math="\Delta \tilde{\mu}_{e^-} = 0" />). The reading is zero.
         </p>
 
         <p className="mb-6">
@@ -123,7 +108,7 @@ export default function PotentialWeDoNotMeasurePost() {
         <h3 className="text-2xl font-bold text-slate-900 mt-10 mb-4 font-sans">{"Why the \"Test-Charge\" Intuition Fails in Matter"}</h3>
 
         <p className="mb-6">
-          In vacuum electrostatics, the electric potential is defined by measuring the force on a hypothetical, non-interacting test charge. Integrate that force, and you map {"\\(\\phi\\)"}.
+          In vacuum electrostatics, the electric potential is defined by measuring the force on a hypothetical, non-interacting test charge. Integrate that force, and you map <Math math="\phi" />.
         </p>
 
         <p className="mb-6">
@@ -143,11 +128,11 @@ export default function PotentialWeDoNotMeasurePost() {
         </ul>
 
         <p className="mb-6">
-          The ion does not respond to {"\\(\\phi\\)"} alone. It responds to its entire chemical and physical environment. The &quot;potential of mean force&quot; driving it is a combination of chemistry and electrostatics that cannot be cleanly decoupled. Any attempt to define a potential drop across an interface—without accounting for these local chemical changes—is thermodynamically incomplete.
+          The ion does not respond to <Math math="\phi" /> alone. It responds to its entire chemical and physical environment. The &quot;potential of mean force&quot; driving it is a combination of chemistry and electrostatics that cannot be cleanly decoupled. Any attempt to define a potential drop across an interface—without accounting for these local chemical changes—is thermodynamically incomplete.
         </p>
 
         <p className="mb-6">
-          This incompleteness does not disappear just because a model is convenient. Poisson–Boltzmann-type frameworks describe double layers by assuming ions distribute based on a local electrostatic potential. That works reasonably well in dilute solutions. But near an interface, or in concentrated electrolytes, non-electrostatic interactions dominate. If we force the framework anyway, we end up hiding those specific chemical interactions inside a modified {"\\(\\phi\\)"}—the double-layer potential appears to change, while what actually changes is the total electrochemical environment of the interface.
+          This incompleteness does not disappear just because a model is convenient. Poisson–Boltzmann-type frameworks describe double layers by assuming ions distribute based on a local electrostatic potential. That works reasonably well in dilute solutions. But near an interface, or in concentrated electrolytes, non-electrostatic interactions dominate. If we force the framework anyway, we end up hiding those specific chemical interactions inside a modified <Math math="\phi" />—the double-layer potential appears to change, while what actually changes is the total electrochemical environment of the interface.
         </p>
 
         <hr className="my-10 border-t border-slate-200" />
@@ -159,11 +144,11 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          The open-circuit voltage ({"\\(U\\)"}) is not a direct measure of the electrostatic potential of {"\\(\\text{Li}^+\\)"} ions. It reflects the chemical potential difference of neutral lithium ({"\\(\\text{Li}\\)"}) between anode and cathode:
+          The open-circuit voltage (<Math math="U" />) is not a direct measure of the electrostatic potential of <Math math="\text{Li}^+" /> ions. It reflects the chemical potential difference of neutral lithium (<Math math="\text{Li}" />) between anode and cathode:
         </p>
 
         <div className="my-8 overflow-x-auto text-center bg-slate-50/50 py-4 rounded-xl border border-slate-100">
-          {"$$ U = -\\frac{\\mu_{\\text{Li}}^{\\text{cathode}} - \\mu_{\\text{Li}}^{\\text{anode}}}{F} $$"}
+          <Math math="U = -\frac{\mu_{\text{Li}}^{\text{cathode}} - \mu_{\text{Li}}^{\text{anode}}}{F}" block className="text-xl font-semibold text-slate-900" />
         </div>
 
         <p className="mb-6">
@@ -183,11 +168,11 @@ export default function PotentialWeDoNotMeasurePost() {
         </p>
 
         <p className="mb-6">
-          {"\\(\\phi\\)"} is a model variable—chosen by how we partition {"\\(\\tilde{\\mu}_i\\)"}, not handed to us by nature. The voltage we measure is always operational: a difference in electrochemical potential ({"\\(\\Delta \\tilde{\\mu}_{e^-}\\)"}), not a direct window into {"\\(\\phi\\)"}. Interfacial quantities like Galvani potentials are internal descriptions that require specific models to be meaningful. They are not independent thermodynamic observables.
+          <Math math="\phi" /> is a model variable—chosen by how we partition <Math math="\tilde{\mu}_i" />, not handed to us by nature. The voltage we measure is always operational: a difference in electrochemical potential (<Math math="\Delta \tilde{\mu}_{e^-}" />), not a direct window into <Math math="\phi" />. Interfacial quantities like Galvani potentials are internal descriptions that require specific models to be meaningful. They are not independent thermodynamic observables.
         </p>
 
         <p className="mb-6">
-          By keeping this distinction clear—between what is conceptual ({"\\(\\phi\\)"}) and what is operational ({"\\(V\\)"})—we avoid assigning physical reality to parameters that are artifacts of our chosen reference state.
+          By keeping this distinction clear—between what is conceptual (<Math math="\phi" />) and what is operational (<Math math="V" />)—we avoid assigning physical reality to parameters that are artifacts of our chosen reference state.
         </p>
 
         <p className="mb-8">
