@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import { postMetadata } from '@/data/posts';
+
+export const metadata = postMetadata('measurement-challenge');
 
 export default function MeasurementChallengePost() {
   return (

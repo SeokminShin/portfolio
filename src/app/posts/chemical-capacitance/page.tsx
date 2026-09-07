@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import { postMetadata } from '@/data/posts';
+
+export const metadata = postMetadata('chemical-capacitance');
 
 export default function ChemicalCapacitancePost() {
   return (
