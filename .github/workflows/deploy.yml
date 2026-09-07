@@ -31,10 +31,13 @@ jobs:
           node-version: "20"
           cache: 'npm'
 
+      # `static_site_generator: next` is deliberately NOT set. That input makes
+      # the action write its own next.config.js from a blank template, which
+      # Next then loads in preference to next.config.ts — silently discarding
+      # everything this repo configures beyond basePath/output/images. All
+      # three of those are declared explicitly in next.config.ts instead.
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
 
       - name: Install dependencies
         run: npm ci
@@ -47,6 +50,17 @@ jobs:
 
       - name: Build with Next.js
         run: npm run build
+
+      # A green build is not proof the export is shaped correctly: when the
+      # Pages action overwrote next.config.ts, `trailingSlash` vanished and the
+      # build still succeeded while every trailing-slash URL 404'd. Assert the
+      # shape we actually deploy.
+      - name: Verify export shape
+        run: |
+          test -f out/research/index.html || { echo "::error::trailingSlash is not in effect - out/research/index.html missing"; exit 1; }
+          test ! -f out/research.html     || { echo "::error::flat out/research.html emitted - next.config.ts was probably ignored"; exit 1; }
+          test -f out/sitemap.xml         || { echo "::error::out/sitemap.xml missing"; exit 1; }
+          echo "Export shape OK."
 
       - name: Upload artifact
         if: github.event_name != 'pull_request'
