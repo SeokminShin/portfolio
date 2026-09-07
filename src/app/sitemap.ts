@@ -1,6 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { posts } from '@/data/posts';
 
+// sitemap.ts compiles to a Route Handler, and `output: export` refuses to
+// collect one that has not been explicitly marked static.
+export const dynamic = 'force-static';
+
 const SITE_URL = 'https://seokminshin.github.io/portfolio';
 
 /** `posts.ts` stores human-readable dates; fall back to the build date. */
