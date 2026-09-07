@@ -119,7 +119,7 @@ export default function MeasurementChallengePost() {
           </p>
 
           <div className="bg-white border border-dashed border-slate-300 rounded-xl p-6 text-sm font-sans text-slate-500">
-            <p><strong>[Viewpoint Citation]</strong>: Choi, Y., Kweon, H., Shin, S., & Kang, S. D. (2026). <em>Charge-Transfer Kinetics of Intercalation Reactions: A Measurement Challenge</em>. ACS Energy Letters. <a href="file:///Users/ss/Desktop/SD%20Kang/Project/40_Electrochemical%20Kinetics/Published/charge-transfer-kinetics-of-intercalation-reactions-a-measurement-challenge.pdf" className="text-[#FF6C0C] hover:underline font-bold">Read the PDF locally.</a></p>
+            <p><strong>[Viewpoint Citation]</strong>: Choi, Y., Kweon, H., Shin, S., & Kang, S. D. (2026). <em>Charge-Transfer Kinetics of Intercalation Reactions: A Measurement Challenge</em>. ACS Energy Letters. <a href="https://doi.org/10.1021/acsenergylett.6c01178" target="_blank" rel="noopener noreferrer" className="text-[#FF6C0C] hover:underline font-bold">View the publication.</a></p>
           </div>
         </div>
 

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:privacy": "node scripts/check-public-paths.mjs"
   },
   "dependencies": {
     "@types/katex": "^0.16.8",

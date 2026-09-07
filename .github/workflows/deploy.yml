@@ -38,6 +38,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Check for private local paths
+        run: npm run check:privacy
+
       - name: Build with Next.js
         run: npm run build
 
