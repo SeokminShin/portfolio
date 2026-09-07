@@ -64,4 +64,12 @@ Photos must be stripped of EXIF before they are committed — `npm run check:pri
 ## Deployment
 
 [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) lints, runs the privacy check, builds,
-and publishes `out/` to GitHub Pages. Pull requests run the same checks without deploying.
+verifies the shape of the export, and publishes `out/` to GitHub Pages. Pull requests run the same
+checks without deploying.
+
+> **Do not add `static_site_generator: next` to the `actions/configure-pages` step.** That input
+> makes the action write its own `next.config.js` from a blank template — not from this repo's
+> config — and Next loads `.js` in preference to `.ts`, so everything in
+> [`next.config.ts`](next.config.ts) beyond `basePath` / `output` / `images.unoptimized` is silently
+> discarded. That is how `trailingSlash` was dropped while CI stayed green. The "Verify export
+> shape" step exists to catch a regression here.
