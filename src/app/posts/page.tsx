@@ -1,5 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { posts } from '@/data/posts';
+
+export const metadata: Metadata = {
+  title: 'Blog & Reflections',
+  description:
+    'Essays and academic notes on physical electrochemistry, thermodynamics, and the conventions the field agrees to trust.',
+  openGraph: {
+    type: 'website',
+    title: 'Blog & Reflections',
+    description:
+      'Essays and academic notes on physical electrochemistry, thermodynamics, and life.',
+    url: '/posts',
+  },
+};
 
 export default function BlogIndex() {
   return (

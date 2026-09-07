@@ -1,1 +1,50 @@
 @import "tailwindcss";
+
+/*
+ * Entrance animations.
+ *
+ * The pages use the `animate-in` / `fade-in` / `slide-in-from-*` / `zoom-in-*`
+ * class names from tailwindcss-animate, which is not a dependency of this
+ * project. Tailwind v4 emitted no rules for them, so every page transition was
+ * silently inert. These definitions restore the intended behaviour without
+ * adding a plugin, and read their timing from Tailwind's own `duration-*`
+ * utilities via `--tw-duration`.
+ */
+@layer utilities {
+  .animate-in {
+    --enter-opacity: 1;
+    --enter-scale: 1;
+    --enter-translate-x: 0;
+    --enter-translate-y: 0;
+    animation-name: enter;
+    animation-duration: var(--tw-duration, 0.5s);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    --enter-opacity: 0;
+  }
+
+  .zoom-in-95 {
+    --enter-scale: 0.95;
+  }
+
+  .slide-in-from-bottom-4 {
+    --enter-translate-y: 1rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-in {
+      animation: none;
+    }
+  }
+}
+
+@keyframes enter {
+  from {
+    opacity: var(--enter-opacity);
+    transform: translate3d(var(--enter-translate-x), var(--enter-translate-y), 0)
+      scale(var(--enter-scale));
+  }
+}

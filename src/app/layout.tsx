@@ -6,9 +6,39 @@ import Link from 'next/link';
 
 const inter = Inter({ subsets: ["latin"] });
 
+const SITE_URL = "https://seokminshin.github.io/portfolio";
+const SITE_DESCRIPTION =
+  "Research portfolio of Seokmin Shin — physical electrochemistry, electrochemical thermodynamics, and the driving forces behind interfacial charge transport.";
+
 export const metadata: Metadata = {
-  title: "Seokmin Shin | Electrochemical Thermodynamics",
-  description: "Portfolio and research highlights of Seokmin Shin.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Seokmin Shin | Electrochemical Thermodynamics",
+    template: "%s | Seokmin Shin",
+  },
+  description: SITE_DESCRIPTION,
+  authors: [{ name: "Seokmin Shin" }],
+  openGraph: {
+    type: "website",
+    siteName: "Seokmin Shin",
+    title: "Seokmin Shin | Electrochemical Thermodynamics",
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    images: [
+      {
+        url: `${SITE_URL}/seokmin.jpg`,
+        width: 824,
+        height: 1000,
+        alt: "Seokmin Shin",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Seokmin Shin | Electrochemical Thermodynamics",
+    description: SITE_DESCRIPTION,
+    images: [`${SITE_URL}/seokmin.jpg`],
+  },
 };
 
 export default function RootLayout({
@@ -32,12 +62,20 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-        
+
         <main className="flex-1 mx-auto w-full max-w-5xl px-6 py-12">
           {children}
         </main>
 
         <footer className="border-t border-slate-200 bg-white py-8 text-center text-sm text-slate-500 flex flex-col items-center gap-2">
+          <p>
+            <a
+              href="mailto:seokmin_shin@snu.ac.kr"
+              className="font-medium text-slate-600 transition-colors hover:text-[#A31F34] hover:underline"
+            >
+              seokmin_shin@snu.ac.kr
+            </a>
+          </p>
           <p>© {new Date().getFullYear()} Seokmin Shin. All rights reserved.</p>
         </footer>
       </body>

@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 export interface Post {
   title: string;
   date: string;
@@ -49,3 +51,30 @@ export const posts: Post[] = [
     themeColor: "crimson"
   }
 ];
+
+/**
+ * Looks up a post by slug. Throws at build time rather than rendering an empty
+ * page, so a renamed route can never ship with a silently missing entry.
+ */
+export function getPost(slug: string): Post {
+  const post = posts.find((entry) => entry.slug === slug);
+  if (!post) {
+    throw new Error(`No post found for slug "${slug}" in src/data/posts.ts`);
+  }
+  return post;
+}
+
+/** Per-essay page metadata, derived from the single source of truth above. */
+export function postMetadata(slug: string): Metadata {
+  const post = getPost(slug);
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.excerpt,
+      url: `/posts/${post.slug}`,
+    },
+  };
+}

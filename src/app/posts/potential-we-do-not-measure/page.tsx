@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import Math from '@/components/Math';
+import { postMetadata } from '@/data/posts';
+
+export const metadata = postMetadata('potential-we-do-not-measure');
 
 export default function PotentialWeDoNotMeasurePost() {
   return (

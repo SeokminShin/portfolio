@@ -3,6 +3,9 @@ name: Deploy Next.js site to Pages
 on:
   push:
     branches: ["main", "master"]
+  # Validate lint / privacy / build before anything reaches the live site.
+  pull_request:
+    branches: ["main", "master"]
   workflow_dispatch:
 
 permissions:
@@ -11,7 +14,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  # Keyed per ref so pull-request validation never queues behind a live deploy.
+  group: "pages-${{ github.ref }}"
   cancel-in-progress: false
 
 jobs:
@@ -45,11 +49,13 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
+        if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
