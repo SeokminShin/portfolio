@@ -28,7 +28,7 @@ export default function MeasurementChallengePost() {
       </header>
 
       {/* Main Content */}
-      <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-serif">
+      <div className="prose prose-slate prose-lg prose-a:no-underline max-w-none text-slate-700 leading-relaxed font-serif">
         
         <p className="mb-6">
           In my previous essay on <em>Chemical Capacitance</em>, I concluded with a fundamental question: if an intercalation material remembers every charge-transfer event through a continuous shift in its thermodynamic state, how can we hope to isolate and measure the charge-transfer kinetics themselves?

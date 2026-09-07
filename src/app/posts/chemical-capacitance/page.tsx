@@ -28,7 +28,7 @@ export default function ChemicalCapacitancePost() {
       </header>
 
       {/* Main Content */}
-      <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-serif">
+      <div className="prose prose-slate prose-lg prose-a:no-underline max-w-none text-slate-700 leading-relaxed font-serif">
         <p className="mb-6">
           Electrochemistry uses a shared language across many research fields. Electrocatalysis &amp; Battery intercalation, for example, both involve charge transfer across an interface. They use concepts such as overpotential, exchange current density, transfer coefficient, and reaction kinetics. Because of this shared vocabulary, it is tempting to imagine that the same electroanalytical intuition can be applied from one field to the other.
         </p>
