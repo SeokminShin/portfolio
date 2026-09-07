@@ -12,7 +12,8 @@ export const metadata: Metadata = {
   },
 };
 
-// Author lists follow the publisher records registered with Crossref.
+// Co-authors are abbreviated to initials, checked against the publisher records
+// registered with Crossref. Every author is listed — no elisions.
 const pubs = [
   {
     year: "2026",
@@ -20,7 +21,7 @@ const pubs = [
       {
         title: "Charge-Transfer Kinetics of Intercalation Reactions: A Measurement Challenge",
         journal: "ACS Energy Lett.",
-        authors: "Yeonggeon Choi, Hyukjin Kweon, Seokmin Shin, Stephen Dongmin Kang",
+        authors: "Y. Choi, H. Kweon, Seokmin Shin, S. D. Kang",
         link: "https://doi.org/10.1021/acsenergylett.6c01178",
       },
     ],
@@ -31,13 +32,13 @@ const pubs = [
       {
         title: "Advancements in electrochemical methanol synthesis from CO2: Mechanisms and catalyst developments",
         journal: "Nano Energy",
-        authors: "Hojeong Lee, Namgyoo Park, Tae-Hoon Kong, Seontaek Kwon, Seokmin Shin, Sun Gwan Cha, Eunyoung Lee, Jihoo Cha, Siraj Sultan, Youngkook Kwon",
+        authors: "H. Lee, N. Park, T.-H. Kong, S. Kwon, Seokmin Shin, S. G. Cha, E. Lee, J. Cha, S. Sultan, Y. Kwon",
         link: "https://doi.org/10.1016/j.nanoen.2024.110099",
       },
       {
         title: "Direction of Oxygen Evolution Reaction Electrocatalyst Evaluation for an Anion Exchange Membrane CO2 Electrolyzer",
         journal: "EES Catal.",
-        authors: "Seontaek Kwon, Tae-Hoon Kong, Namgyoo Park, Pandiarajan Thangavel, Hojeong Lee, Seokmin Shin, Jihoo Cha, Youngkook Kwon",
+        authors: "S. Kwon, T.-H. Kong, N. Park, P. Thangavel, H. Lee, Seokmin Shin, J. Cha, Y. Kwon",
         link: "https://doi.org/10.1039/D3EY00314K",
       },
     ],
@@ -48,19 +49,19 @@ const pubs = [
       {
         title: "Copper With an Atomic-scale Spacing for Efficient Electrocatalytic Co-reduction of Carbon Dioxide and Nitrate to Urea",
         journal: "Energy Environ. Sci.",
-        authors: "Seokmin Shin, Siraj Sultan, Zong-Xian Chen, Hojeong Lee, Hansaem Choi, Tae-Ung Wi, Changhyun Park, Taewon Kim, Chanhee Lee, Jihong Jeong, Hyeju Shin, Tae-Hee Kim, Hyungkuk Ju, Hyung Chul Yoon, Hyun-Kon Song, Hyun-Wook Lee, Mu-Jeng Cheng, Youngkook Kwon",
+        authors: "Seokmin Shin, S. Sultan, Z.-X. Chen, H. Lee, H. Choi, T.-U. Wi, C. Park, T. Kim, C. Lee, J. Jeong, H. Shin, T.-H. Kim, H. Ju, H. C. Yoon, H.-K. Song, H.-W. Lee, M.-J. Cheng, Y. Kwon",
         link: "https://doi.org/10.1039/D3EE00008G",
       },
       {
         title: "Selectively Enhanced Electrocatalytic Oxygen Evolution within Nanoscopic Channels Fitting a Specific Reaction Intermediate for Seawater Splitting",
         journal: "Small",
-        authors: "Seokmin Shin, Tae-Ung Wi, Tae-Hoon Kong, Chanhyun Park, Hojeong Lee, Jihong Jeong, Eunryeol Lee, Subhin Yoon, Tae-Hee Kim, Hyun-Wook Lee, Youngkook Kwon, Hyun-Kon Song",
+        authors: "Seokmin Shin, T.-U. Wi, T.-H. Kong, C. Park, H. Lee, J. Jeong, E. Lee, S. Yoon, T.-H. Kim, H.-W. Lee, Y. Kwon, H.-K. Song",
         link: "https://doi.org/10.1002/smll.202206918",
       },
       {
         title: "In-Situ Ionomer-Free Catalyst-Coated Membranes for Anion Exchange Membrane Water Electrolyzers",
         journal: "ACS Energy Lett.",
-        authors: "Tae-Hoon Kong, Pandiarajan Thangavel, Seokmin Shin, Seontaek Kwon, Hansaem Choi, Hojeong Lee, Namgyoo Park, Jung-Je Woo, Youngkook Kwon",
+        authors: "T.-H. Kong, P. Thangavel, Seokmin Shin, S. Kwon, H. Choi, H. Lee, N. Park, J.-J. Woo, Y. Kwon",
         link: "https://doi.org/10.1021/acsenergylett.3c01418",
       },
     ],
@@ -71,7 +72,7 @@ const pubs = [
       {
         title: "Metal-nitrogen intimacy of the nitrogen-doped ruthenium oxide for facilitating electrochemical hydrogen production",
         journal: "Appl. Catal. B: Environ.",
-        authors: "Yeongdae Lee, Jang Hyuk Ahn, Seokmin Shin, Seo-Hyun Jung, Han-Saem Park, Yoon-Gyo Cho, Dong-Gyu Lee, Hoyoul Kong, Jun Hee Lee, Hyun-Kon Song",
+        authors: "Y. Lee, J. H. Ahn, Seokmin Shin, S.-H. Jung, H.-S. Park, Y.-G. Cho, D.-G. Lee, H. Kong, J. H. Lee, H.-K. Song",
         link: "https://doi.org/10.1016/j.apcatb.2021.120873",
       },
     ],
@@ -82,13 +83,13 @@ const pubs = [
       {
         title: "Double activation of oxygen intermediates of oxygen reduction reaction by dual inorganic/organic hybrid electrocatalysts",
         journal: "Nano Energy",
-        authors: "Dong-Gyu Lee, Su Hwan Kim, Jiyun Lee, Seokmin Shin, Se Hun Joo, Yeongdae Lee, Chanhyun Park, Youngkook Kwon, Sang Kyu Kwak, Hyun-Kon Song",
+        authors: "D.-G. Lee, S. H. Kim, J. Lee, Seokmin Shin, S. H. Joo, Y. Lee, C. Park, Y. Kwon, S. K. Kwak, H.-K. Song",
         link: "https://doi.org/10.1016/j.nanoen.2021.106048",
       },
       {
         title: "Breaking the Linear Scaling Relationship by a Proton Donor for Improving Electrocatalytic Oxygen Reduction Kinetics",
         journal: "ACS Catal.",
-        authors: "Dong-Gyu Lee, Su Hwan Kim, Hyun Ho Lee, Seokmin Shin, Jiyun Lee, Se Hun Joo, Yeongdae Lee, Sang Kyu Kwak, Hyun-Kon Song",
+        authors: "D.-G. Lee, S. H. Kim, H. H. Lee, Seokmin Shin, J. Lee, S. H. Joo, Y. Lee, S. K. Kwak, H.-K. Song",
         link: "https://doi.org/10.1021/acscatal.1c02934",
       },
     ],
