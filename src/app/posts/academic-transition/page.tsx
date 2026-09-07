@@ -28,7 +28,7 @@ export default function AcademicTransitionPost() {
       </header>
 
       {/* Main Content */}
-      <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-serif">
+      <div className="prose prose-slate prose-lg prose-a:no-underline max-w-none text-slate-700 leading-relaxed font-serif">
         
         <p className="mb-6">
           My early doctoral journey at UNIST was profoundly fulfilling. Immersed in the field of electrocatalysis, I explored organic and inorganic hybrid systems, published multiple peer-reviewed papers, and presented my findings at prominent scientific conferences. My energy was focused on macroscopic kinetic outcomes—optimizing reaction pathways and manipulating binding energies to circumvent Linear Scaling Relationships (LSRs).

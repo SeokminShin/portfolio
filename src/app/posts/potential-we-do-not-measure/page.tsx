@@ -29,7 +29,7 @@ export default function PotentialWeDoNotMeasurePost() {
       </header>
 
       {/* Main Content */}
-      <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-serif">
+      <div className="prose prose-slate prose-lg prose-a:no-underline max-w-none text-slate-700 leading-relaxed font-serif">
         
         {/* Dedication block with styled highlight for Prof. Kang */}
         <div className="bg-[#A31F34]/5 border-l-[6px] border-[#A31F34] p-8 my-10 rounded-r-xl shadow-inner not-prose">

@@ -32,7 +32,7 @@ export default function PhConventionArchitecturePost() {
       </header>
 
       {/* Main Content */}
-      <div className="prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-serif">
+      <div className="prose prose-slate prose-lg prose-a:no-underline max-w-none text-slate-700 leading-relaxed font-serif">
         
         {/* Intro Connection Box */}
         <div className="bg-[#A31F34]/5 border-l-[6px] border-[#A31F34] p-6 my-6 rounded-r-xl shadow-inner not-prose">
