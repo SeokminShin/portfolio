@@ -51,7 +51,14 @@ export default function Home() {
         </div>
         <div className="sm:w-[35%] flex justify-center sm:justify-end">
           <div className="relative h-44 w-44 shrink-0 overflow-hidden rounded-full border-[5px] border-white shadow-xl sm:h-56 sm:w-56 transform transition duration-500 hover:scale-105 hover:rotate-1">
-             <Image src="/portfolio/seokmin.jpg" alt="Seokmin Shin Profile Picture" fill className="object-cover" priority />
+             <Image
+               src="/portfolio/seokmin.jpg"
+               alt="Seokmin Shin Profile Picture"
+               fill
+               sizes="(min-width: 640px) 224px, 176px"
+               className="object-cover"
+               priority
+             />
           </div>
         </div>
       </section>
@@ -138,7 +145,13 @@ export default function Home() {
           My deeply beloved puppy, <strong>Coco</strong>, who acts as my Principal Paw-vestigator and provides endless emotional support during long hours of research.
         </p>
         <Link href="/coco" className="relative overflow-hidden w-48 h-48 rounded-full border-[6px] border-[#FF6C0C]/30 flex flex-col items-center justify-end bg-slate-100 shadow-xl transform transition duration-500 hover:scale-105 hover:rotate-3 cursor-pointer group pb-4">
-          <img src="/portfolio/coco/main.jpg" alt="Coco" className="absolute inset-0 w-full h-full object-cover z-0 group-hover:scale-110 transition-transform duration-700" />
+          <Image
+            src="/portfolio/coco/main.jpg"
+            alt="Coco"
+            fill
+            sizes="192px"
+            className="object-cover z-0 group-hover:scale-110 transition-transform duration-700"
+          />
           <span className="relative z-10 text-xs font-bold flex flex-col items-center gap-1 group-hover:text-[#FF6C0C] bg-white/40 px-3 py-1.5 rounded-full backdrop-blur-md transition-colors text-slate-900 shadow-sm border border-white/20">
             🐶 View Gallery
           </span>
