@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { posts } from '@/data/posts';
+import { social } from '@/lib/site';
+
+const TITLE = 'Blog & Reflections';
+const DESCRIPTION =
+  'Essays and academic notes on physical electrochemistry, thermodynamics, and the conventions the field agrees to trust.';
 
 export const metadata: Metadata = {
-  title: 'Blog & Reflections',
-  description:
-    'Essays and academic notes on physical electrochemistry, thermodynamics, and the conventions the field agrees to trust.',
-  openGraph: {
-    type: 'website',
-    title: 'Blog & Reflections',
-    description:
-      'Essays and academic notes on physical electrochemistry, thermodynamics, and life.',
-    url: '/posts',
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  ...social({ title: TITLE, description: DESCRIPTION, path: '/posts/' }),
 };
 
 export default function BlogIndex() {

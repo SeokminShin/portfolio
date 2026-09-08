@@ -2,18 +2,16 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import PawIcon from '@/components/PawIcon';
+import { social } from '@/lib/site';
+
+const TITLE = "Coco's Gallery";
+const DESCRIPTION =
+  "A photo archive of Coco, Principal Paw-vestigator and the true mastermind behind all great electrochemical properties.";
 
 export const metadata: Metadata = {
-  title: "Coco's Gallery",
-  description:
-    "A photo archive of Coco, Principal Paw-vestigator and the true mastermind behind all great electrochemical properties.",
-  openGraph: {
-    type: 'website',
-    title: "Coco's Gallery",
-    description: "A photo archive of Coco, Principal Paw-vestigator.",
-    url: '/coco',
-    images: [{ url: '/portfolio/coco/main.jpg', alt: 'Coco' }],
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  ...social({ title: TITLE, description: DESCRIPTION, path: '/coco/' }),
 };
 
 const photos = [

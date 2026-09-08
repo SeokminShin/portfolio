@@ -25,6 +25,7 @@ The dev server runs at http://localhost:3000/portfolio — the `basePath` in
 | `npm run lint`          | ESLint with `eslint-config-next` (core-web-vitals + TypeScript)         |
 | `npm run check:privacy` | Fails on local filesystem paths in text files, or EXIF/GPS in `public/` |
 | `npm run build`         | Static export to `out/`                                                 |
+| `npm run og`            | Regenerates the social card at `public/og-card.png`                     |
 
 All three run in CI on every pull request and on every push to `main`.
 
@@ -60,6 +61,22 @@ The blog index, the research page cards, and the two featured cards on the homep
 `/portfolio/coco/1.jpg`); `next/link` `href`s do not, since Next adds it automatically.
 
 Photos must be stripped of EXIF before they are committed — `npm run check:privacy` enforces this.
+
+### The social card
+
+`public/og-card.png` (1200×630) is the Open Graph / Twitter card for every page. Edit the design in
+[`scripts/generate-og-image.mjs`](scripts/generate-og-image.mjs) and run `npm run og` to rebuild it;
+[`src/lib/site.ts`](src/lib/site.ts) points at it and builds the per-page `openGraph` / `twitter`
+metadata through its `social()` helper.
+
+Two things to know before "simplifying" this to Next's `opengraph-image` route convention, both of
+which were tried and reverted:
+
+- Under `output: export` that convention emits an **extensionless** file (`out/opengraph-image`).
+  GitHub Pages derives Content-Type from the extension, so scrapers do not get `image/png`.
+- It only reaches pages that do not declare their own `openGraph`. Declaring one replaces the
+  parent's wholesale, so every inner page silently loses its card. That is also why each page calls
+  `social()` rather than relying on inheritance.
 
 ## Deployment
 

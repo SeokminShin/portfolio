@@ -3,42 +3,19 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 import Link from 'next/link';
+import { SITE_DESCRIPTION, SITE_ORIGIN, SITE_TITLE, social } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const SITE_URL = "https://seokminshin.github.io/portfolio";
-const SITE_DESCRIPTION =
-  "Research portfolio of Seokmin Shin — physical electrochemistry, electrochemical thermodynamics, and the driving forces behind interfacial charge transport.";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
-    default: "Seokmin Shin | Electrochemical Thermodynamics",
+    default: SITE_TITLE,
     template: "%s | Seokmin Shin",
   },
   description: SITE_DESCRIPTION,
   authors: [{ name: "Seokmin Shin" }],
-  openGraph: {
-    type: "website",
-    siteName: "Seokmin Shin",
-    title: "Seokmin Shin | Electrochemical Thermodynamics",
-    description: SITE_DESCRIPTION,
-    url: SITE_URL,
-    images: [
-      {
-        url: `${SITE_URL}/seokmin.jpg`,
-        width: 824,
-        height: 1000,
-        alt: "Seokmin Shin",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary",
-    title: "Seokmin Shin | Electrochemical Thermodynamics",
-    description: SITE_DESCRIPTION,
-    images: [`${SITE_URL}/seokmin.jpg`],
-  },
+  ...social({ title: SITE_TITLE, description: SITE_DESCRIPTION, path: "/" }),
 };
 
 export default function RootLayout({
