@@ -54,6 +54,23 @@ export default function Research() {
               </div>
             </div>
           </section>
+
+          <section className="flex flex-col gap-4">
+            <h3 className="text-2xl font-bold text-[#A31F34]">Verifiable Intercalation Kinetics</h3>
+            <div className="p-8 rounded-2xl border border-slate-200 bg-white shadow-sm hover:shadow-xl hover:border-[#FF6C0C] transition-all duration-500 group">
+              <p className="text-slate-700 font-semibold mb-6 bg-slate-50 p-4 rounded-xl border-l-4 border-[#FF6C0C] italic leading-relaxed">
+                "Establishing a measurement environment in which <strong>charge-transfer kinetics</strong> can be read without first assuming the model used to correct for them."
+              </p>
+              <div className="flex flex-col gap-4 text-slate-600 leading-relaxed text-lg">
+                <p>
+                  Because intercalation materials store charge inside the host lattice, the <strong>redox potential shifts while the measurement is being made</strong>. Our Viewpoint in <a href="https://doi.org/10.1021/acsenergylett.6c01178" target="_blank" rel="noopener noreferrer" className="font-bold text-[#A31F34] hover:underline transition-colors">ACS Energy Letters</a> audited three widely used electroanalytical protocols against a known ground truth, and each recovered the wrong physics: linear extrapolation overestimates overvoltage in the Tafel regime, time-readout at the EIS resonance flattens a non-linear signature into an apparent resistor, and large-amplitude frequency-domain analysis misidentifies the symmetry factor.
+                </p>
+                <p>
+                  The failure is <strong>methodological rather than material</strong>. Any scheme correcting for the potential shift must assume a kinetic model beforehand, and in the exponential regime that assumption is amplified back into the answer—a closed loop in which measured kinetics merely restate the correction. Breaking it is what I am working on now: <strong>decoupling the thermodynamic shift from the kinetic signal</strong> by redefining the measurement environment itself, so that charge-transfer parameters become observed rather than inferred.
+                </p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
 
