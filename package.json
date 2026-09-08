@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:privacy": "node scripts/check-public-paths.mjs"
+    "check:privacy": "node scripts/check-public-paths.mjs",
+    "og": "node scripts/generate-og-image.mjs"
   },
   "dependencies": {
     "katex": "0.18.4",

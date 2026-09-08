@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
+import { social } from '@/lib/site';
+
+const TITLE = 'Publications';
+const DESCRIPTION =
+  'Peer-reviewed articles by Seokmin Shin on electrochemical kinetics, CO2 and nitrate electroreduction, oxygen evolution catalysis, and intercalation thermodynamics.';
 
 export const metadata: Metadata = {
-  title: 'Publications',
-  description:
-    'Peer-reviewed articles by Seokmin Shin on electrochemical kinetics, CO2 and nitrate electroreduction, oxygen evolution catalysis, and intercalation thermodynamics.',
-  openGraph: {
-    type: 'website',
-    title: 'Publications',
-    description: 'Peer-reviewed articles and research contributions by Seokmin Shin.',
-    url: '/publications',
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  ...social({ title: TITLE, description: DESCRIPTION, path: '/publications/' }),
 };
 
 // Co-authors are abbreviated to initials, checked against the publisher records

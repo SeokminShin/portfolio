@@ -1,18 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { posts } from '@/data/posts';
+import { social } from '@/lib/site';
+
+const TITLE = 'Research';
+const DESCRIPTION =
+  'From macroscopic catalyst engineering toward the fundamental physicochemical rules governing electrochemical processes: decoupling thermodynamic driving forces and transport in highly non-ideal systems.';
 
 export const metadata: Metadata = {
-  title: 'Research',
-  description:
-    'From macroscopic catalyst engineering toward the fundamental physicochemical rules governing electrochemical processes: decoupling thermodynamic driving forces and transport in highly non-ideal systems.',
-  openGraph: {
-    type: 'website',
-    title: 'Research',
-    description:
-      'Decoupling thermodynamic driving forces and transport phenomena in highly non-ideal electrochemical processes.',
-    url: '/research',
-  },
+  title: TITLE,
+  description: DESCRIPTION,
+  ...social({ title: TITLE, description: DESCRIPTION, path: '/research/' }),
 };
 
 export default function Research() {

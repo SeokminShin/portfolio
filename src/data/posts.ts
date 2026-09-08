@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { social } from '@/lib/site';
 
 export interface Post {
   title: string;
@@ -70,11 +71,11 @@ export function postMetadata(slug: string): Metadata {
   return {
     title: post.title,
     description: post.excerpt,
-    openGraph: {
-      type: 'article',
+    ...social({
       title: post.title,
       description: post.excerpt,
-      url: `/posts/${post.slug}`,
-    },
+      path: `/posts/${post.slug}/`,
+      type: 'article',
+    }),
   };
 }
