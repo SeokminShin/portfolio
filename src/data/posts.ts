@@ -1,6 +1,3 @@
-import type { Metadata } from 'next';
-import { social } from '@/lib/site';
-
 export interface Post {
   title: string;
   date: string;
@@ -63,19 +60,4 @@ export function getPost(slug: string): Post {
     throw new Error(`No post found for slug "${slug}" in src/data/posts.ts`);
   }
   return post;
-}
-
-/** Per-essay page metadata, derived from the single source of truth above. */
-export function postMetadata(slug: string): Metadata {
-  const post = getPost(slug);
-  return {
-    title: post.title,
-    description: post.excerpt,
-    ...social({
-      title: post.title,
-      description: post.excerpt,
-      path: `/posts/${post.slug}/`,
-      type: 'article',
-    }),
-  };
 }

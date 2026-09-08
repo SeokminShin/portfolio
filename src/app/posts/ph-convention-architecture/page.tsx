@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Math from '@/components/Math';
-import { postMetadata } from '@/data/posts';
+import { postMetadata } from '@/lib/site';
 
 export const metadata = postMetadata('ph-convention-architecture');
 

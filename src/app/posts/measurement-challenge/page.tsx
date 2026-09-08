@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { postMetadata } from '@/data/posts';
+import { postMetadata } from '@/lib/site';
 
 export const metadata = postMetadata('measurement-challenge');
 

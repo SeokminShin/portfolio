@@ -8,7 +8,8 @@ GitHub Pages.
 
 ## Local development
 
-Requires Node.js 20 or newer.
+Requires Node.js 22.18 or newer. The card generator imports `src/data/posts.ts` directly and relies
+on Node's built-in type stripping; CI pins Node 24.
 
 ```bash
 npm install
@@ -25,9 +26,9 @@ The dev server runs at http://localhost:3000/portfolio — the `basePath` in
 | `npm run lint`          | ESLint with `eslint-config-next` (core-web-vitals + TypeScript)         |
 | `npm run check:privacy` | Fails on local filesystem paths in text files, or EXIF/GPS in `public/` |
 | `npm run build`         | Static export to `out/`                                                 |
-| `npm run og`            | Regenerates the social card at `public/og-card.png`                     |
+| `npm run og`            | Regenerates every social card under `public/`                           |
 
-All three run in CI on every pull request and on every push to `main`.
+The first three run in CI on every pull request and on every push to `main`.
 
 ## Layout
 
@@ -40,16 +41,21 @@ src/app/                 Routes (App Router)
   coco/                  Photo gallery
   layout.tsx             Shell, navigation, site-wide metadata
 src/components/          Math (KaTeX), CVModal, PawIcon
-src/data/posts.ts        Single source of truth for essays and their metadata
+src/data/posts.ts        Single source of truth for essays — data only, no imports
+src/lib/site.ts          Site constants, social-card wiring, per-page metadata
 public/                  CV PDF and images, served under /portfolio/
-scripts/                 Repository checks
+  og-card.png            Default social card
+  og/<slug>.png          One social card per essay
+scripts/                 Repository checks and the card generator
 ```
 
 ### Adding an essay
 
 1. Add an entry to the top of `posts` in [`src/data/posts.ts`](src/data/posts.ts).
 2. Create `src/app/posts/<slug>/page.tsx` and export
-   `export const metadata = postMetadata('<slug>')`.
+   `export const metadata = postMetadata('<slug>')`, imported from
+   [`src/lib/site.ts`](src/lib/site.ts).
+3. Run `npm run og` and commit the new `public/og/<slug>.png`.
 
 The blog index, the research page cards, and the two featured cards on the homepage all read from
 `posts.ts`, so nothing else needs updating.
@@ -62,12 +68,17 @@ The blog index, the research page cards, and the two featured cards on the homep
 
 Photos must be stripped of EXIF before they are committed — `npm run check:privacy` enforces this.
 
-### The social card
+### The social cards
 
-`public/og-card.png` (1200×630) is the Open Graph / Twitter card for every page. Edit the design in
-[`scripts/generate-og-image.mjs`](scripts/generate-og-image.mjs) and run `npm run og` to rebuild it;
-[`src/lib/site.ts`](src/lib/site.ts) points at it and builds the per-page `openGraph` / `twitter`
-metadata through its `social()` helper.
+Every page carries a 1200×630 Open Graph / Twitter card. Essays get their own card, titled with the
+essay and tinted with its `themeColor`; every other page uses the shared `public/og-card.png`.
+
+Both designs live in [`scripts/generate-og-image.mjs`](scripts/generate-og-image.mjs); run
+`npm run og` to rebuild them. The script imports the essay list straight from
+[`src/data/posts.ts`](src/data/posts.ts), which is why that file deliberately has no runtime imports
+— it has to be loadable by a plain Node script as well as by Next. Metadata assembly lives in
+[`src/lib/site.ts`](src/lib/site.ts), whose `social()` helper each page calls, and whose
+`postCardPath()` derives an essay's card URL from the same slug the generator writes.
 
 Two things to know before "simplifying" this to Next's `opengraph-image` route convention, both of
 which were tried and reverted:
