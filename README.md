@@ -60,6 +60,24 @@ scripts/                 Repository checks and the card generator
 The blog index, the research page cards, and the two featured cards on the homepage all read from
 `posts.ts`, so nothing else needs updating.
 
+### Unpublishing an essay
+
+To take an essay off the site without losing it, two things have to happen,
+because an essay is half data and half route:
+
+1. Set `draft: true` on its entry in [`src/data/posts.ts`](src/data/posts.ts).
+   `posts` is the published subset, so the blog index, the homepage cards, the
+   research page, the sitemap and the card generator all drop it at once.
+2. Move `src/app/posts/<slug>/` to `src/app/posts/_<slug>/`. A leading
+   underscore makes it a private folder, which Next excludes from routing along
+   with everything beneath it, so the route stops being exported.
+
+Step 1 alone would leave the page reachable by direct URL; step 2 alone would
+leave the index linking to a 404. Reverse both to republish.
+
+The essay’s social card is deliberately left in `public/og/` — nothing links to
+it while the essay is down, and it is needed again on republish.
+
 ### Images and assets
 
 `public/` is copied verbatim into the export. Because `basePath` is `/portfolio`, `next/image`
