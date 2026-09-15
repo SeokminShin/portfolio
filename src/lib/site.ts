@@ -10,7 +10,7 @@ export const SITE_URL = `${SITE_ORIGIN}${SITE_BASE_PATH}`;
  * https://<code>.goatcounter.com. Empty disables tracking entirely and the
  * script is never rendered, so the site can ship without it.
  */
-export const GOATCOUNTER_CODE: string = '';
+export const GOATCOUNTER_CODE: string = 'seokminshin';
 
 export const SITE_TITLE = 'Seokmin Shin | Electrochemical Thermodynamics';
 export const SITE_DESCRIPTION =
