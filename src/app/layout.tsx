@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 import Link from 'next/link';
+import Analytics from '@/components/Analytics';
 import { SITE_DESCRIPTION, SITE_ORIGIN, SITE_TITLE, social } from "@/lib/site";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -55,6 +56,7 @@ export default function RootLayout({
           </p>
           <p>© {new Date().getFullYear()} Seokmin Shin. All rights reserved.</p>
         </footer>
+        <Analytics />
       </body>
     </html>
   );
