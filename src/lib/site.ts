@@ -5,6 +5,13 @@ export const SITE_ORIGIN = 'https://seokminshin.github.io';
 export const SITE_BASE_PATH = '/portfolio';
 export const SITE_URL = `${SITE_ORIGIN}${SITE_BASE_PATH}`;
 
+/**
+ * GoatCounter site code — the subdomain half of
+ * https://<code>.goatcounter.com. Empty disables tracking entirely and the
+ * script is never rendered, so the site can ship without it.
+ */
+export const GOATCOUNTER_CODE: string = 'seokminshin';
+
 export const SITE_TITLE = 'Seokmin Shin | Electrochemical Thermodynamics';
 export const SITE_DESCRIPTION =
   'Research portfolio of Seokmin Shin — physical electrochemistry, electrochemical thermodynamics, and the driving forces behind interfacial charge transport.';
