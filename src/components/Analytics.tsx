@@ -7,9 +7,12 @@ import { GOATCOUNTER_CODE } from '@/lib/site';
 
 declare global {
   interface Window {
-    goatcounter?: { count?: (vars: { path: string }) => void };
+    goatcounter?: { count?: (vars: { path: string; title: string }) => void };
   }
 }
+
+/** How long to wait for the title before counting anyway, in ms. */
+const TITLE_SETTLE_TIMEOUT = 300;
 
 /**
  * GoatCounter pageview tracking — cookieless, so no consent banner is needed.
@@ -36,14 +39,35 @@ export default function Analytics() {
       pending.current = path;
       return;
     }
-    window.goatcounter.count({ path });
+    window.goatcounter.count({ path, title: document.title });
   }, []);
 
   useEffect(() => {
-    // location.pathname rather than the router's pathname: the router strips
-    // basePath, and the dashboard is easier to read when its paths match the
-    // URLs people actually visit (/portfolio/posts/... not /posts/...).
-    send(window.location.pathname);
+    if (!GOATCOUNTER_CODE) return;
+
+    // The title has to be read late. On a client-side navigation the App
+    // Router commits the new page's metadata *after* effects run, so
+    // document.title is still empty here and GoatCounter — which falls back to
+    // reading it itself — files the view under "(no title)". Two frames is
+    // enough for the title to land, but requestAnimationFrame is paused in a
+    // background tab, so a timeout races it and the first one through wins.
+    let sent = false;
+    const fire = () => {
+      if (sent) return;
+      sent = true;
+      // location.pathname rather than the router's pathname: the router strips
+      // basePath, and the dashboard is easier to read when its paths match the
+      // URLs people actually visit (/portfolio/posts/... not /posts/...).
+      send(window.location.pathname);
+    };
+
+    const frame = requestAnimationFrame(() => requestAnimationFrame(fire));
+    const timer = window.setTimeout(fire, TITLE_SETTLE_TIMEOUT);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      clearTimeout(timer);
+    };
   }, [pathname, send]);
 
   if (!GOATCOUNTER_CODE) return null;
@@ -58,7 +82,7 @@ export default function Analytics() {
         loaded.current = true;
         const path = pending.current ?? window.location.pathname;
         pending.current = null;
-        window.goatcounter?.count?.({ path });
+        window.goatcounter?.count?.({ path, title: document.title });
       }}
     />
   );
