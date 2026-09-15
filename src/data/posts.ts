@@ -5,16 +5,30 @@ export interface Post {
   slug: string;
   category: string;
   themeColor: 'amber' | 'crimson';
+  /**
+   * Withheld from the site while true. The essay drops out of `posts`, so the
+   * blog index, the homepage cards, the research page, the sitemap and the card
+   * generator all skip it in one move.
+   *
+   * Taking it out of routing is a separate step, because the route exists as a
+   * file rather than as data: move src/app/posts/<slug>/ to _<slug>/, which Next
+   * excludes from routing along with everything under it. Undo both to republish.
+   */
+  draft?: boolean;
 }
 
-export const posts: Post[] = [
+/** Every essay ever written here, drafts included. */
+const allPosts: Post[] = [
   {
     title: "The Curve We Cannot Read: On the Structural Indistinguishability of Interfacial Kinetics",
     date: "September 15, 2026",
     excerpt: "Why Butler–Volmer, its resistance-corrected cousins, and Marcus–Hush–Chidsey/CIET kinetics all agree near equilibrium, diverge only where the data cannot yet be trusted, and what breaking that degeneracy would require.",
     slug: "kinetic-model-degeneracy",
     category: "Core Philosophy",
-    themeColor: "crimson"
+    themeColor: "crimson",
+    // Unpublished pending a content revision; the route sits in
+    // src/app/posts/_kinetic-model-degeneracy/ until then.
+    draft: true
   },
   {
     title: "The Number We Agree to Trust: pH and the Architecture of Convention",
@@ -59,13 +73,27 @@ export const posts: Post[] = [
 ];
 
 /**
- * Looks up a post by slug. Throws at build time rather than rendering an empty
- * page, so a renamed route can never ship with a silently missing entry.
+ * The published essays, newest first. Every page and the card generator reads
+ * this, so unpublishing one is a matter of setting `draft` rather than deleting
+ * anything.
+ */
+export const posts: Post[] = allPosts.filter((entry) => !entry.draft);
+
+/**
+ * Looks up a published post by slug. Throws at build time rather than rendering
+ * an empty page, so a renamed route can never ship with a silently missing entry.
+ *
+ * Resolving against `posts` rather than `allPosts` is deliberate: restoring a
+ * route from its private folder without clearing `draft` then fails the build
+ * instead of shipping a page that nothing links to.
  */
 export function getPost(slug: string): Post {
   const post = posts.find((entry) => entry.slug === slug);
   if (!post) {
-    throw new Error(`No post found for slug "${slug}" in src/data/posts.ts`);
+    throw new Error(
+      `No published post for slug "${slug}" in src/data/posts.ts — ` +
+        `either the entry is missing or it is still marked draft.`,
+    );
   }
   return post;
 }
