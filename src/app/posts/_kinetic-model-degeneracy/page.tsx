@@ -46,7 +46,7 @@ export default function KineticModelDegeneracyPost() {
         </p>
 
         <p className="mb-6">
-          I want to make a claim precise rather than rhetorical. Over the overpotential range we can actually access on a real cell, several genuinely different hypotheses claim to describe the interface: symmetric Butler–Volmer, asymmetric Butler–Volmer, resistance-corrected (&quot;modified&quot;) Butler–Volmer, Marcus–Hush–Chidsey, and CIET. They do not merely fit the same data equally well. To leading order, they are the same equation. The differences that are supposed to distinguish them only appear in a regime where two unrelated artifacts produce the identical signature. This is not a statement about needing better instruments; it is a statement about the algebra.
+          Let me put the claim precisely. Over the overpotential range a real cell gives us, several genuinely different hypotheses compete to describe the interface: symmetric Butler–Volmer, asymmetric Butler–Volmer, resistance-corrected (&quot;modified&quot;) Butler–Volmer, Marcus–Hush–Chidsey, and CIET. Their agreement runs deeper than a shared ability to fit the same data. To leading order, they are the same equation. The differences meant to distinguish them surface only in a regime where two unrelated artifacts produce the identical signature. Better instruments would not settle it; the obstruction is in the algebra.
         </p>
 
         <hr className="my-10 border-t border-slate-200" />
@@ -56,7 +56,7 @@ export default function KineticModelDegeneracyPost() {
         </h3>
 
         <p className="mb-6">
-          It is easy to talk about &quot;BV versus CIET&quot; as if there were two candidates. There are really a family of candidates, all built from the same move: assume a shape for the free-energy landscape of the elementary charge-transfer step, then read off a current from it.
+          It is easy to talk about &quot;BV versus CIET&quot; as if there were two candidates. What we are choosing among is a family, all of it built from the same move: assume a shape for the free-energy landscape of the elementary charge-transfer step, then read off a current from it.
         </p>
 
         <ul className="list-disc pl-6 mb-6 space-y-2 font-sans text-slate-700">
@@ -112,7 +112,7 @@ export default function KineticModelDegeneracyPost() {
         <div className="bg-[#FF6C0C]/5 border-l-[6px] border-[#FF6C0C] p-8 my-8 rounded-r-xl shadow-inner not-prose">
           <p className="m-0 font-medium text-slate-900 text-lg leading-relaxed">
             <span className="font-bold text-[#FF6C0C] uppercase tracking-wider block text-xs mb-1 font-sans">Key Insight</span>
-            The charge-transfer resistance <Math math="R_{ct}" /> that a small-signal EIS measurement returns carries no information about <Math math="\alpha" /> at all. That is not a limitation of any particular instrument; it falls out of the algebra. The transfer coefficient — and with it the entire question of how asymmetric the barrier is — enters only at second order, buried under whatever double-layer charging, thermodynamic drift, and ordinary noise already crowd that regime.
+            The charge-transfer resistance <Math math="R_{ct}" /> that a small-signal EIS measurement returns carries no information about <Math math="\alpha" /> at all. The expansion never gave it a place to appear: the transfer coefficient — and with it the entire question of how asymmetric the barrier is — enters only at second order, buried under whatever double-layer charging, thermodynamic drift, and ordinary noise already crowd that regime.
         </p>
         </div>
 
@@ -127,7 +127,7 @@ export default function KineticModelDegeneracyPost() {
         </h3>
 
         <p className="mb-6">
-          The disagreement is real, but it only shows up far from equilibrium. Butler–Volmer has no ceiling: each exponential term grows without bound as <Math math="\eta" /> grows, so the current keeps climbing on a Tafel plot forever. Marcus theory says something structurally different. The activation energy for a single barrier is a parabola in the driving force,
+          The disagreement is real, but it only shows up far from equilibrium. Butler–Volmer has no ceiling: each exponential term grows without bound as <Math math="\eta" /> grows, so the current keeps climbing on a Tafel plot forever. Marcus theory behaves differently by construction. The activation energy for a single barrier is a parabola in the driving force,
         </p>
 
         <div className="my-8 overflow-x-auto text-center bg-slate-50/50 py-5 rounded-xl border border-slate-200/80 shadow-sm font-sans">
@@ -139,7 +139,7 @@ export default function KineticModelDegeneracyPost() {
         </p>
 
         <p className="mb-6">
-          An electrode does not do this, and this is Chidsey&apos;s (1991) central point. A metal or a semiconducting oxide offers a whole continuum of electronic states, not one. Past the barrierless point, there is always some subset of states with the right energy to react without paying the inverted-region penalty, so the net current saturates instead of turning over. CIET inherits this saturating, S-shaped curve because it is built on the same MHC formalism. The one place the family is supposed to disagree with Butler–Volmer is exactly this large-<Math math="\eta" /> plateau, a feature set by <Math math="\lambda" /> and not by anything an EIS spectrum at low bias could have told you.
+          An electrode does not behave this way, which is Chidsey&apos;s (1991) central point. A metal or a semiconducting oxide offers a whole continuum of electronic states, not one. Past the barrierless point, there is always some subset of states with the right energy to react without paying the inverted-region penalty, so the net current saturates instead of turning over. CIET inherits this saturating, S-shaped curve because it is built on the same MHC formalism. The one place the family is supposed to disagree with Butler–Volmer is exactly this large-<Math math="\eta" /> plateau, a feature set by <Math math="\lambda" />, and invisible to any EIS spectrum taken at low bias.
         </p>
 
         <div className="grid gap-6 my-8 not-prose">
@@ -195,7 +195,7 @@ export default function KineticModelDegeneracyPost() {
         </p>
 
         <p className="mb-6">
-          I used to think of resistance correction as a fix, a way of cleaning the data before the real kinetic question gets asked. I don&apos;t think that anymore. Adding <Math math="R_s" /> as a free parameter does not remove the degeneracy between an intrinsic saturation and an artifact; it relocates it. A curve that bends over at high <Math math="\eta" /> can now be explained by <em>any</em> combination of a real <Math math="\lambda" />, a real diffusion length <Math math="L" />, and an assumed <Math math="R_s" /> that trades off against both. &quot;Modified BV&quot; is not a competitor to CIET in this story. It is a third member of the same family of curves that all bend the same way for different reasons.
+          I used to think of resistance correction as a fix, a way of cleaning the data before the real kinetic question gets asked. I don&apos;t think that anymore. Adding <Math math="R_s" /> as a free parameter does not remove the degeneracy between an intrinsic saturation and an artifact; it relocates it. A curve that bends over at high <Math math="\eta" /> can now be explained by <em>any</em> combination of a real <Math math="\lambda" />, a real diffusion length <Math math="L" />, and an assumed <Math math="R_s" /> that trades off against both. &quot;Modified BV&quot; sits inside this family alongside CIET — a third curve that bends like the others, for a reason of its own.
         </p>
 
         <hr className="my-10 border-t border-slate-200" />
@@ -227,11 +227,11 @@ export default function KineticModelDegeneracyPost() {
         </p>
 
         <p className="mb-6">
-          This is not a hypothetical fix. It is close to what Kapate et al. (2026) actually did for a related confound: a diffusion-like, <Math math="\sqrt{t}" />-type impedance response in porous NMC electrodes had been read for years as evidence of solid-state lithium diffusion. Removing the porous transport pathway with dense, single-crystal electrodes collapsed the correlation between the apparent Warburg coefficient and the apparent charge-transfer resistance almost entirely. The mechanism wasn&apos;t solid-state diffusion at all. It was electrolyte penetrating the pores, mimicking diffusion&apos;s frequency signature from a geometric origin. Nothing about re-fitting the original data would have revealed that. Changing the architecture did.
+          There is precedent for this working. Kapate et al. (2026) found a geometric origin behind a diffusion-like impedance response in porous NMC electrodes that had long been read as solid-state lithium diffusion — and it was a change of electrode architecture, not a closer fit to the old spectra, that revealed it. Their case deserves a review of its own, so I will leave it at that.
         </p>
 
         <p className="mb-6">
-          The resistance-versus-intrinsic-saturation confound needs the same kind of move: a way of reading the true interfacial <Math math="\eta" /> directly, close enough to the reaction plane that <Math math="R_s" /> stops being a free parameter to fit around and becomes something the architecture pins down on its own. And underneath both of these sits the confound my last two essays were actually about: none of this length-scale or resistance bookkeeping means anything if the reference potential itself is drifting as the reaction proceeds, which is exactly what happens to an intercalation electrode&apos;s <Math math="U_{eq}(x)" /> and doesn&apos;t happen to a catalytic one. State-fixing isn&apos;t a fourth item on this list. It&apos;s the precondition for the other two mattering at all.
+          The resistance-versus-intrinsic-saturation confound needs the same kind of move: a way of reading the true interfacial <Math math="\eta" /> directly, close enough to the reaction plane that <Math math="R_s" /> stops being a free parameter to fit around and becomes something the architecture pins down on its own. And underneath both sits the confound my last two essays were circling: none of this length-scale or resistance bookkeeping survives a reference potential that drifts as the reaction proceeds, which is exactly what an intercalation electrode&apos;s <Math math="U_{eq}(x)" /> does and a catalytic electrode&apos;s does not. State-fixing comes first, and the other two become answerable only once it holds.
         </p>
 
         <div className="bg-[#A31F34]/5 border-l-[6px] border-[#A31F34] p-8 my-10 rounded-r-xl shadow-inner not-prose">
