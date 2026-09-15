@@ -25,10 +25,7 @@ const allPosts: Post[] = [
     excerpt: "Why Butler–Volmer, its resistance-corrected cousins, and Marcus–Hush–Chidsey/CIET kinetics all agree near equilibrium, diverge only where the data cannot yet be trusted, and what breaking that degeneracy would require.",
     slug: "kinetic-model-degeneracy",
     category: "Core Philosophy",
-    themeColor: "crimson",
-    // Unpublished pending a content revision; the route sits in
-    // src/app/posts/_kinetic-model-degeneracy/ until then.
-    draft: true
+    themeColor: "crimson"
   },
   {
     title: "The Number We Agree to Trust: pH and the Architecture of Convention",
