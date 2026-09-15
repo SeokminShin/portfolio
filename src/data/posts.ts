@@ -9,6 +9,14 @@ export interface Post {
 
 export const posts: Post[] = [
   {
+    title: "The Curve We Cannot Read: On the Structural Indistinguishability of Interfacial Kinetics",
+    date: "September 15, 2026",
+    excerpt: "Why Butler–Volmer, its resistance-corrected cousins, and Marcus–Hush–Chidsey/CIET kinetics all agree near equilibrium, diverge only where the data cannot yet be trusted, and what breaking that degeneracy would require.",
+    slug: "kinetic-model-degeneracy",
+    category: "Core Philosophy",
+    themeColor: "crimson"
+  },
+  {
     title: "The Number We Agree to Trust: pH and the Architecture of Convention",
     date: "July 31, 2026",
     excerpt: "On individual ion activities, the Bates–Guggenheim convention, chemical capacitance, and why the questions we ask about battery kinetics might be arriving one step too early.",
