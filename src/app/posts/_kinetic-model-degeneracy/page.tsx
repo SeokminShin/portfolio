@@ -227,11 +227,7 @@ export default function KineticModelDegeneracyPost() {
         </p>
 
         <p className="mb-6">
-          There is precedent for this working. Kapate et al. (2026) found a geometric origin behind a diffusion-like impedance response in porous NMC electrodes that had long been read as solid-state lithium diffusion — and it was a change of electrode architecture, not a closer fit to the old spectra, that revealed it. Their case deserves a review of its own, so I will leave it at that.
-        </p>
-
-        <p className="mb-6">
-          The resistance-versus-intrinsic-saturation confound needs the same kind of move: a way of reading the true interfacial <Math math="\eta" /> directly, close enough to the reaction plane that <Math math="R_s" /> stops being a free parameter to fit around and becomes something the architecture pins down on its own. And underneath both sits the confound my last two essays were circling: none of this length-scale or resistance bookkeeping survives a reference potential that drifts as the reaction proceeds, which is exactly what an intercalation electrode&apos;s <Math math="U_{eq}(x)" /> does and a catalytic electrode&apos;s does not. State-fixing comes first, and the other two become answerable only once it holds.
+          The resistance-versus-intrinsic-saturation confound needs the same kind of move: a way of reading the true interfacial <Math math="\eta" /> directly, close enough to the reaction plane that <Math math="R_s" /> stops being a free parameter to fit around and becomes something the architecture pins down on its own. And underneath both sits the confound my last two essays were circling: none of this length-scale or resistance bookkeeping survives a reference potential that drifts as the reaction proceeds, which is exactly what an intercalation electrode&apos;s <Math math="U_{eq}(x)" /> does and a catalytic electrode&apos;s does not. That has to be settled first; the other two become answerable only once the baseline holds still.
         </p>
 
         <div className="bg-[#A31F34]/5 border-l-[6px] border-[#A31F34] p-8 my-10 rounded-r-xl shadow-inner not-prose">
@@ -265,9 +261,6 @@ export default function KineticModelDegeneracyPost() {
             </li>
             <li className="leading-relaxed">
               Bai, P. &amp; Bazant, M. Z. &quot;Charge transfer kinetics at the solid–solid interface in porous electrodes.&quot; <em>Nat. Commun.</em> 5, 3585 (2014).
-            </li>
-            <li className="leading-relaxed">
-              Kapate, N. et al. &quot;Diffusion-like overpotentials from non-diffusion mechanisms in battery particles.&quot; <em>Nature Energy</em> (2026).
             </li>
             <li className="leading-relaxed">
               Bard, A. J. &amp; Faulkner, L. R. <em>Electrochemical Methods: Fundamentals and Applications</em>, 2nd ed. Wiley (2001).
