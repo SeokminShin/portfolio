@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import Math from '@/components/Math';
+import { getPost } from '@/data/posts';
 import { postMetadata } from '@/lib/site';
 
 export const metadata = postMetadata('ph-convention-architecture');
+
+/** Single source of truth for the badge, shared with the index cards. */
+const post = getPost('ph-convention-architecture');
 
 export default function PhConventionArchitecturePost() {
   return (
@@ -16,7 +20,7 @@ export default function PhConventionArchitecturePost() {
             Back to Blog
           </Link>
           <span className="text-slate-300">•</span>
-          <span>Core Philosophy</span>
+          <span>{post.category}</span>
           <span className="text-slate-300">•</span>
           <span className="text-slate-500 font-medium">July 31, 2026</span>
         </div>
@@ -163,7 +167,7 @@ export default function PhConventionArchitecturePost() {
         </p>
 
         <p className="mb-6">
-          But my earlier essay on the Measurement Challenge showed something uncomfortable: every popular method for extracting battery kinetics runs into the same wall that individual ion activity ran into. The quantity we want is entangled with a shifting thermodynamic reference (<span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-2 py-0.5 rounded font-sans">which is called chemical capacitance</span>) that we cannot cleanly subtract away. We are, in a sense, trying to answer a mechanistic-lineage question before we have done the operationalist-lineage work of deciding what, exactly, can be pinned down and agreed upon.
+          But my earlier essay on the Measurement Challenge showed something uncomfortable: every popular method for extracting battery kinetics runs into the same wall that individual ion activity ran into. The quantity we want is entangled with a thermodynamic reference that moves while we are measuring against it: the equilibrium potential itself shifts as lithium enters the host, and how much charge it takes to move that potential is exactly what <span className="font-semibold text-[#A31F34] bg-[#A31F34]/5 px-2 py-0.5 rounded font-sans">chemical capacitance</span> measures. The shift is not something we can cleanly subtract away. We are, in a sense, trying to answer a mechanistic-lineage question before we have done the operationalist-lineage work of deciding what, exactly, can be pinned down and agreed upon.
         </p>
 
         <p className="mb-6">

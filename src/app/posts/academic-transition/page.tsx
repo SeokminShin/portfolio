@@ -1,7 +1,11 @@
 import Link from 'next/link';
+import { getPost, posts } from '@/data/posts';
 import { postMetadata } from '@/lib/site';
 
 export const metadata = postMetadata('academic-transition');
+
+/** Single source of truth for the badge, shared with the index cards. */
+const post = getPost('academic-transition');
 
 export default function AcademicTransitionPost() {
   return (
@@ -10,12 +14,12 @@ export default function AcademicTransitionPost() {
       {/* Header */}
       <header className="flex flex-col gap-4 border-b border-slate-200 pb-8 text-center sm:text-left">
         <div className="flex items-center justify-center sm:justify-start gap-3 text-sm font-bold text-[#FF6C0C] uppercase tracking-wider">
-          <Link href="/research" className="hover:text-[#A31F34] transition-colors flex items-center gap-1">
+          <Link href="/posts" className="hover:text-[#A31F34] transition-colors flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-            Back to Research
+            Back to Blog
           </Link>
           <span className="text-slate-300">•</span>
-          <span>Academic Essay</span>
+          <span>{post.category}</span>
           <span className="text-slate-300">•</span>
           <span className="text-slate-500 font-medium">March 15, 2026</span>
         </div>
@@ -62,12 +66,34 @@ export default function AcademicTransitionPost() {
             Ongoing Reflections
           </h2>
           <p className="text-slate-500 mb-6 text-sm font-sans italic leading-relaxed">
-            This section serves as an open space for my ongoing scientific inquiries. I will regularly upload hypotheses, theoretical reflections, and topics of mutual interest that challenge our current understanding of electrochemical systems.
+            This section serves as an open space for my ongoing scientific inquiries. I will regularly upload hypotheses, theoretical reflections, and topics of mutual interest that challenge our current understanding of electrochemical systems. What has followed this essay so far:
           </p>
 
-          <div className="bg-white border border-dashed border-slate-300 rounded-xl p-6 text-sm font-sans text-slate-500">
-            <p><strong>[Update]</strong>: My new essay on <em>Chemical Capacitance</em> and the divide between Electrocatalysis and Battery Science is now available. <Link href="/posts/chemical-capacitance" className="text-[#FF6C0C] hover:underline font-bold">Read it here.</Link></p>
-          </div>
+          {/*
+            Built from src/data/posts.ts rather than written out, so publishing
+            an essay adds it here and this list can never go stale again.
+          */}
+          <ol className="not-prose m-0 flex list-none flex-col gap-3 p-0">
+            {[...posts]
+              .reverse()
+              .filter((entry) => entry.slug !== post.slug)
+              .map((entry) => (
+                <li
+                  key={entry.slug}
+                  className="rounded-xl border border-dashed border-slate-300 bg-white p-5"
+                >
+                  <Link
+                    href={`/posts/${entry.slug}`}
+                    className="font-sans text-sm font-bold text-slate-900 transition-colors hover:text-[#FF6C0C]"
+                  >
+                    {entry.title}
+                  </Link>
+                  <p className="m-0 mt-1 font-sans text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    {entry.date}
+                  </p>
+                </li>
+              ))}
+          </ol>
         </div>
 
       </div>

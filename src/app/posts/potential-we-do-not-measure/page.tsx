@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import Math from '@/components/Math';
+import { getPost } from '@/data/posts';
 import { postMetadata } from '@/lib/site';
 
 export const metadata = postMetadata('potential-we-do-not-measure');
+
+/** Single source of truth for the badge, shared with the index cards. */
+const post = getPost('potential-we-do-not-measure');
 
 export default function PotentialWeDoNotMeasurePost() {
   return (
@@ -16,7 +20,7 @@ export default function PotentialWeDoNotMeasurePost() {
             Back to Blog
           </Link>
           <span className="text-slate-300">•</span>
-          <span>Core Philosophy</span>
+          <span>{post.category}</span>
           <span className="text-slate-300">•</span>
           <span className="text-slate-500 font-medium">June 27, 2026</span>
         </div>
