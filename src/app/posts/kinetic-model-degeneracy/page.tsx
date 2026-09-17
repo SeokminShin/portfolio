@@ -1,8 +1,12 @@
 import Link from 'next/link';
 import Math from '@/components/Math';
+import { getPost } from '@/data/posts';
 import { postMetadata } from '@/lib/site';
 
 export const metadata = postMetadata('kinetic-model-degeneracy');
+
+/** Single source of truth for the badge, shared with the index cards. */
+const post = getPost('kinetic-model-degeneracy');
 
 export default function KineticModelDegeneracyPost() {
   return (
@@ -16,7 +20,7 @@ export default function KineticModelDegeneracyPost() {
             Back to Blog
           </Link>
           <span className="text-slate-300">•</span>
-          <span>Core Philosophy</span>
+          <span>{post.category}</span>
           <span className="text-slate-300">•</span>
           <span className="text-slate-500 font-medium">September 15, 2026</span>
         </div>
