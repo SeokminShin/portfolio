@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { posts } from '@/data/posts';
-import { selectedResearch } from '@/data/research';
 import { SITE_BASE_PATH } from '@/lib/site';
 import styles from './portfolio.module.css';
 
@@ -54,36 +53,6 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </section>
-
-      <section aria-labelledby="selected-research-title">
-        <div className={styles.sectionHead}>
-          <h2 id="selected-research-title" className={styles.sectionTitle}>
-            Selected Research
-          </h2>
-          <Link href="/publications" className={styles.textLink}>
-            All publications
-          </Link>
-        </div>
-        {selectedResearch.map((work) => (
-          <article key={work.id} className={styles.workRow}>
-            <time className={styles.year} dateTime={work.year}>{work.year}</time>
-            <div className={styles.workBody}>
-              <p className={styles.journal}>
-                {work.journal}{work.publicationType && ` · ${work.publicationType}`}
-              </p>
-              <h3 className={styles.workTitle}>{work.title}</h3>
-              <p className={styles.workSummary}>{work.summary}</p>
-            </div>
-            <Link
-              href={`/research#${work.id}`}
-              className={styles.textLink}
-              aria-label={`Details: ${work.title}`}
-            >
-              Details
-            </Link>
-          </article>
-        ))}
       </section>
 
       {featuredPosts.length > 0 && (
