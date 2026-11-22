@@ -40,8 +40,10 @@ src/app/                 Routes (App Router)
   posts/                 Blog index + one directory per essay
   coco/                  Photo gallery
   layout.tsx             Shell, navigation, site-wide metadata
-src/components/          Math (KaTeX), CVModal, PawIcon
+  portfolio.module.css   Shared shell and Home / Research styles
+src/components/          SiteHeader, Math (KaTeX), CVModal, PawIcon
 src/data/posts.ts        Single source of truth for essays — data only, no imports
+src/data/research.ts     Selected research shared by Home and Research
 src/lib/site.ts          Site constants, social-card wiring, per-page metadata
 public/                  CV PDF and images, served under /portfolio/
   og-card.png            Default social card
@@ -57,8 +59,14 @@ scripts/                 Repository checks and the card generator
    [`src/lib/site.ts`](src/lib/site.ts).
 3. Run `npm run og` and commit the new `public/og/<slug>.png`.
 
-The blog index, the research page cards, and the two featured cards on the homepage all read from
-`posts.ts`, so nothing else needs updating.
+The blog index and homepage cards read from `posts.ts`. Home shows the introductory
+chemical-capacitance essay and the most recent other published essay; if the introductory essay
+is unpublished, it falls back to the two most recent essays. Optional `shortTitle` and
+`shortExcerpt` fields provide compact labels without changing essay titles or social cards.
+Research displays selected related reading and omits links to unpublished essays.
+
+The three selected studies on Home and Research share `src/data/research.ts`. Update that file
+to change both the overview and each study's question, approach, contribution, and scope.
 
 ### Unpublishing an essay
 

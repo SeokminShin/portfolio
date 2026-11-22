@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "katex/dist/katex.min.css";
-import Link from 'next/link';
 import Analytics from '@/components/Analytics';
+import SiteHeader from '@/components/SiteHeader';
 import { SITE_DESCRIPTION, SITE_ORIGIN, SITE_TITLE, social } from "@/lib/site";
+import styles from './portfolio.module.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,35 +27,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-slate-50 min-h-screen flex flex-col`}>
-        <nav className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
-          <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-            <Link href="/" className="text-xl font-bold tracking-tighter text-slate-900 group">
-              S<span className="text-[#A31F34] transition-colors group-hover:text-[#FF6C0C]">.</span> Shin
-            </Link>
-            <div className="flex gap-6 text-sm font-medium text-slate-600">
-              <Link href="/" className="transition-colors hover:text-slate-900">Home</Link>
-              <Link href="/research" className="transition-colors hover:text-slate-900">Research</Link>
-              <Link href="/publications" className="transition-colors hover:text-slate-900">Publications</Link>
-              <Link href="/posts" className="transition-colors hover:text-[#FF6C0C]">Blog</Link>
+      <body className={`${inter.className} ${styles.shell}`}>
+        <SiteHeader />
+        <main className={styles.main}>{children}</main>
+        <footer className={styles.footer}>
+          <div className={styles.footerInner}>
+            <div className={styles.footerLinks}>
+              <a href="mailto:seokmin_shin@snu.ac.kr">seokmin_shin@snu.ac.kr</a>
+              <a
+                href="https://scholar.google.com/citations?user=O_j4EIEAAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Scholar
+              </a>
             </div>
+            <p>© {new Date().getFullYear()} Seokmin Shin</p>
           </div>
-        </nav>
-
-        <main className="flex-1 mx-auto w-full max-w-5xl px-6 py-12">
-          {children}
-        </main>
-
-        <footer className="border-t border-slate-200 bg-white py-8 text-center text-sm text-slate-500 flex flex-col items-center gap-2">
-          <p>
-            <a
-              href="mailto:seokmin_shin@snu.ac.kr"
-              className="font-medium text-slate-600 transition-colors hover:text-[#A31F34] hover:underline"
-            >
-              seokmin_shin@snu.ac.kr
-            </a>
-          </p>
-          <p>© {new Date().getFullYear()} Seokmin Shin. All rights reserved.</p>
         </footer>
         <Analytics />
       </body>

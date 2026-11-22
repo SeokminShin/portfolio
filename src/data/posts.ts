@@ -5,6 +5,9 @@ export interface Post {
   slug: string;
   category: string;
   themeColor: 'amber' | 'crimson';
+  /** Compact homepage labels; full essay titles and social cards stay unchanged. */
+  shortTitle?: string;
+  shortExcerpt?: string;
   /**
    * Withheld from the site while true. The essay drops out of `posts`, so the
    * blog index, the homepage cards, the research page, the sitemap and the card
@@ -24,6 +27,8 @@ const allPosts: Post[] = [
     date: "September 15, 2026",
     excerpt: "Why Butler–Volmer, its resistance-corrected cousins, and Marcus–Hush–Chidsey/CIET kinetics all agree near equilibrium, diverge only where the data cannot yet be trusted, and what breaking that degeneracy would require.",
     slug: "kinetic-model-degeneracy",
+    shortTitle: "The Curve We Cannot Read",
+    shortExcerpt: "What a current–overpotential curve can tell us about interfacial kinetics—and which questions remain open.",
     category: "Core Philosophy",
     themeColor: "crimson"
   },
@@ -48,6 +53,7 @@ const allPosts: Post[] = [
     date: "June 15, 2026",
     excerpt: "Reflecting on our viewpoint paper in ACS Energy Letters and exploring why redox-potential shifts render transient kinetics measurements model-dependent.",
     slug: "measurement-challenge",
+    shortTitle: "The Measurement Challenge",
     category: "Viewpoint Review",
     themeColor: "crimson"
   },
@@ -56,6 +62,8 @@ const allPosts: Post[] = [
     date: "April 29, 2026",
     excerpt: "Unraveling the fundamental distinctions between Electrocatalysis and Battery Science through the lens of Chemical Capacitance.",
     slug: "chemical-capacitance",
+    shortTitle: "Product Leaves, Product Stays",
+    shortExcerpt: "Why storing the reaction product changes how we think about electrochemical measurements.",
     category: "Core Philosophy",
     themeColor: "amber"
   },
